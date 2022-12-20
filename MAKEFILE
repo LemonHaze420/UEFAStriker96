@@ -1,0 +1,254 @@
+#-----------------------------------------------------------------------------
+# Makefile for front-end code
+#-----------------------------------------------------------------------------
+
+
+!include ..\headmake.i
+
+
+OBJ_DIR= object\\
+ASSEMBLER_OPTS= /l
+LINKER_OPTS= /i /c /m /o$(EXE_AREA_LINK)
+
+
+ALL_DEPENDS= ..\headmake.i structs.h \global\striker.h
+
+#-----------------------------------------------------------------
+# List of dependancies
+#-----------------------------------------------------------------
+
+main.cpe: $(OBJ_DIR)manage.obj
+main.cpe: $(OBJ_DIR)cdaudio.obj
+main.cpe: $(OBJ_DIR)territ.obj
+main.cpe: $(OBJ_DIR)knockout.obj
+main.cpe: $(OBJ_DIR)cmplogic.obj
+main.cpe: $(OBJ_DIR)memcard.obj
+main.cpe: $(OBJ_DIR)hwcard.obj
+main.cpe: $(OBJ_DIR)league.obj
+main.cpe: $(OBJ_DIR)config.obj
+main.cpe: $(OBJ_DIR)shell.obj
+main.cpe: $(OBJ_DIR)title.obj
+main.cpe: $(OBJ_DIR)teamsel.obj
+main.cpe: $(OBJ_DIR)skindraw.obj
+main.cpe: $(OBJ_DIR)teamedit.obj
+main.cpe: $(OBJ_DIR)entname.obj
+main.cpe: $(OBJ_DIR)preset.obj
+main.cpe: $(OBJ_DIR)text.obj
+main.cpe: $(OBJ_DIR)options.obj
+main.cpe: $(OBJ_DIR)gadget.obj
+main.cpe: $(OBJ_DIR)font.obj
+main.cpe: $(OBJ_DIR)frontend.obj
+main.cpe: $(OBJ_DIR)render.obj
+main.cpe: $(OBJ_DIR)polydraw.obj
+main.cpe: $(OBJ_DIR)anim.obj
+main.cpe: $(OBJ_DIR)utils.obj
+main.cpe: $(OBJ_DIR)scene.obj
+main.cpe: $(OBJ_DIR)general.obj
+main.cpe: $(OBJ_DIR)camera.obj
+main.cpe: $(OBJ_DIR)light.obj
+main.cpe: $(OBJ_DIR)pad.obj
+main.cpe: $(OBJ_DIR)main.obj
+main.cpe: $(OBJ_DIR)hardware.obj
+main.cpe: $(OBJ_DIR)fvars.obj
+main.cpe: $(OBJ_DIR)io.obj
+main.cpe: $(OBJ_DIR)sprite.obj
+main.cpe: $(OBJ_DIR)plasma.obj
+main.cpe: $(OBJ_DIR)sound.obj
+main.cpe: datafile.dat
+main.cpe: $(OBJ_DIR)unpropak.obj
+main.cpe: $(OBJ_DIR)mem.obj
+
+
+
+#-----------------------------------------------------------------
+# Perform link
+#-----------------------------------------------------------------
+
+
+	#doslink
+	psylink $(LINKER_OPTS) @main.lnk,main.cpe,main.sym,main.map
+
+
+
+#----------------------------------------------------------------
+# Files to compile every time
+#----------------------------------------------------------------
+#	touch datafile.s
+#	touch mem.s
+
+#----------------------------------------------------------------
+# Make the object files
+#----------------------------------------------------------------
+
+$(OBJ_DIR)manage.obj: manage.c $(ALL_DEPENDS) manage.h
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) manage.c -o $(OBJ_DIR)manage.obj
+
+$(OBJ_DIR)cdaudio.obj: cdaudio.c $(ALL_DEPENDS) cdaudio.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) cdaudio.c -o $(OBJ_DIR)cdaudio.obj
+
+$(OBJ_DIR)territ.obj: territ.c $(ALL_DEPENDS) territ.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) territ.c -o $(OBJ_DIR)territ.obj
+
+$(OBJ_DIR)knockout.obj: knockout.c $(ALL_DEPENDS) knockout.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) knockout.c -o $(OBJ_DIR)knockout.obj
+
+$(OBJ_DIR)cmplogic.obj: cmplogic.c $(ALL_DEPENDS) cmplogic.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) cmplogic.c -o $(OBJ_DIR)cmplogic.obj
+
+$(OBJ_DIR)memcard.obj: memcard.c $(ALL_DEPENDS) memcard.h
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) memcard.c -o $(OBJ_DIR)memcard.obj
+
+$(OBJ_DIR)hwcard.obj: hwcard.c $(ALL_DEPENDS) hwcard.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) hwcard.c -o $(OBJ_DIR)hwcard.obj
+
+$(OBJ_DIR)league.obj: league.c $(ALL_DEPENDS) league.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) league.c -o $(OBJ_DIR)league.obj
+
+$(OBJ_DIR)config.obj: config.c $(ALL_DEPENDS) config.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) config.c -o $(OBJ_DIR)config.obj
+
+$(OBJ_DIR)shell.obj: shell.c $(ALL_DEPENDS) shell.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) shell.c -o $(OBJ_DIR)shell.obj
+
+$(OBJ_DIR)title.obj: title.c $(ALL_DEPENDS) title.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) title.c -o $(OBJ_DIR)title.obj
+
+$(OBJ_DIR)teamsel.obj: teamsel.c $(ALL_DEPENDS) teamsel.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) teamsel.c -o $(OBJ_DIR)teamsel.obj
+
+$(OBJ_DIR)skindraw.obj: skindraw.c $(ALL_DEPENDS) skindraw.h 
+	ccpsx $(OPTIMISE_FULL) $(PASS_DEFS_FRONT) skindraw.c -o $(OBJ_DIR)skindraw.obj
+	dmpsx $(OBJ_DIR)skindraw.obj    
+
+$(OBJ_DIR)teamedit.obj: teamedit.c $(ALL_DEPENDS) teamedit.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) teamedit.c -o $(OBJ_DIR)teamedit.obj
+
+$(OBJ_DIR)entname.obj: entname.c $(ALL_DEPENDS) entname.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) entname.c -o $(OBJ_DIR)entname.obj
+
+$(OBJ_DIR)preset.obj: preset.c $(ALL_DEPENDS) preset.h  
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) preset.c -o $(OBJ_DIR)preset.obj
+
+$(OBJ_DIR)text.obj: text.c $(ALL_DEPENDS) text.h  teams.c teams.h
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) text.c -o $(OBJ_DIR)text.obj
+
+$(OBJ_DIR)options.obj: options.c $(ALL_DEPENDS) options.h  
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) options.c -o $(OBJ_DIR)options.obj
+
+$(OBJ_DIR)gadget.obj: gadget.c $(ALL_DEPENDS) gadget.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) gadget.c -o $(OBJ_DIR)gadget.obj
+
+$(OBJ_DIR)font.obj: font.c $(ALL_DEPENDS) font.h vrampeek.c scngrab.c scene.h sprite.h spritehw.h
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) font.c -o $(OBJ_DIR)font.obj
+
+$(OBJ_DIR)frontend.obj: frontend.c $(ALL_DEPENDS) frontend.h vrampeek.c scngrab.c scene.h sprite.h spritehw.h
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) frontend.c -o $(OBJ_DIR)frontend.obj
+
+$(OBJ_DIR)render.obj: render.c $(ALL_DEPENDS) render.h vrampeek.c scngrab.c scene.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) render.c -o $(OBJ_DIR)render.obj
+	dmpsx $(OBJ_DIR)render.obj    
+
+$(OBJ_DIR)polydraw.obj: polydraw.c $(ALL_DEPENDS) polydraw.h vrampeek.c scngrab.c scene.h
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) polydraw.c -o $(OBJ_DIR)polydraw.obj
+	dmpsx $(OBJ_DIR)polydraw.obj
+
+$(OBJ_DIR)anim.obj: anim.c $(ALL_DEPENDS) anim.h vrampeek.c scngrab.c
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) anim.c -o $(OBJ_DIR)anim.obj
+
+$(OBJ_DIR)sprite.obj: sprite.c $(ALL_DEPENDS) sprite.h vrampeek.c scngrab.c spritehw.h spritehw.c
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) sprite.c -o $(OBJ_DIR)sprite.obj
+
+$(OBJ_DIR)utils.obj: utils.c $(ALL_DEPENDS) utils.h vrampeek.c scngrab.c
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) utils.c -o $(OBJ_DIR)utils.obj
+
+$(OBJ_DIR)scene.obj: scene.c $(ALL_DEPENDS) scene.h
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) scene.c -o $(OBJ_DIR)scene.obj
+
+$(OBJ_DIR)general.obj: general.c $(ALL_DEPENDS) general.h mem.h
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) general.c -o $(OBJ_DIR)general.obj
+
+$(OBJ_DIR)camera.obj: camera.c $(ALL_DEPENDS) camera.h
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) camera.c -o $(OBJ_DIR)camera.obj
+
+$(OBJ_DIR)light.obj: light.c $(ALL_DEPENDS) light.h
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) light.c -o $(OBJ_DIR)light.obj
+	dmpsx $(OBJ_DIR)light.obj
+
+$(OBJ_DIR)hardware.obj: hardware.c $(ALL_DEPENDS) hardware.h 
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) hardware.c -o $(OBJ_DIR)hardware.obj
+
+$(OBJ_DIR)pad.obj: pad.c $(ALL_DEPENDS) pad.h pad_hw.c pad_hw.h
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) pad.c -o $(OBJ_DIR)pad.obj
+
+$(OBJ_DIR)main.obj: main.c $(ALL_DEPENDS) main.lnk main.h psxmacro.h
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) main.c -o $(OBJ_DIR)main.obj
+
+$(OBJ_DIR)io.obj: io.c $(ALL_DEPENDS) io.h
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) io.c -o $(OBJ_DIR)io.obj
+
+$(OBJ_DIR)sound.obj: sound.c $(ALL_DEPENDS) sound.h
+	ccpsx $(COMPILER_OPTS) $(PASS_DEFS_FRONT) sound.c -o $(OBJ_DIR)sound.obj
+
+$(OBJ_DIR)fvars.obj: fvars.s defs_gen.h defs_psx.h structs.h
+	asmpsx $(ASSEMBLER_OPTS) fvars.s,$(OBJ_DIR)fvars.obj
+
+$(OBJ_DIR)mem.obj: mem.s mem.h
+	asmpsx $(ASSEMBLER_OPTS) mem.s,$(OBJ_DIR)mem.obj 
+
+datafile.dat
+	asmpsx /p datafile.s,datafile.dat
+
+$(OBJ_DIR)unpropak.obj: unpropak.s 
+	asmpsx $(ASSEMBLER_OPTS) unpropak.s,$(OBJ_DIR)unpropak.obj
+
+
+$(OBJ_DIR)plasma.obj: plasma.c $(ALL_DEPENDS) plasma.h 
+	ccpsx $(OPTIMISE_FULL) $(PASS_DEFS_FRONT) plasma.c -o $(OBJ_DIR)plasma.obj
+	dmpsx $(OBJ_DIR)plasma.obj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

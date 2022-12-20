@@ -1,0 +1,165 @@
+Comparing files FRONTEND.C and bak\frontend.c
+****** FRONTEND.C
+
+//      if ( original_config->store_performed == NO )
+//              {
+//              config->store_performed=YES;
+//              *original_config = *config;
+//              }
+
+//      config_auto_load();
+
+****** bak\frontend.c
+
+        config_auto_load();
+
+******
+
+****** FRONTEND.C
+                                        {
+                                        share->thread_pos = 6;
+                                        }
+****** bak\frontend.c
+                                        {
+                                        share->thread_pos = 5;
+                                        }
+******
+
+****** FRONTEND.C
+                        //              {
+                        //              check_for_config_save();
+                        //              }
+****** bak\frontend.c
+                        //              {
+                                        check_for_config_save();
+                        //              }
+******
+
+****** FRONTEND.C
+
+                        //case 5:
+                        /** Return here after friendly has been played **/
+                                //check_for_config_save();
+                        //break;
+
+                        case 6:
+                                share->game_type = FRIENDLY_SAVE;
+****** bak\frontend.c
+
+                        case 5:
+                                share->game_type = FRIENDLY_SAVE;
+******
+
+****** FRONTEND.C
+
+                                //if ( shell->current_button == SHELL_QUIT) )
+                                        share->thread_pos = 2;
+****** bak\frontend.c
+
+                                if ( shell->current_button == SHELL_QUIT )
+                                        share->thread_pos = 2;
+******
+
+****** FRONTEND.C
+                        case 0:
+                                select_num_teams();
+****** bak\frontend.c
+                        case 0:
+                                share->game_type = KNOCKOUT;
+                                share->game_stat = GAME_INIT; //_PROGRESS;
+                                select_num_teams();
+******
+
+****** FRONTEND.C
+                                team_select();
+                                thread_save_quit_req();
+
+
+****** bak\frontend.c
+                                team_select();
+
+******
+
+****** FRONTEND.C
+                                options();
+                                thread_save_quit_req();
+                                
+                        
+****** bak\frontend.c
+                                options();
+
+                        
+******
+
+****** FRONTEND.C
+                                team_select();  // select the human team for this territory only
+
+                                thread_save_quit_req();
+****** bak\frontend.c
+                                team_select();  // select the human team for this territory only
+                                thread_save_quit_req();
+******
+
+****** FRONTEND.C
+                                options();
+                                thread_save_quit_req();
+
+****** bak\frontend.c
+                                options();
+
+******
+
+****** FRONTEND.C
+                                thread_save_quit_req();
+                                init_eurofinal_draw();  /* this generates all 16 teams putting into groups */
+
+****** bak\frontend.c
+                                thread_save_quit_req();
+
+******
+
+****** FRONTEND.C
+
+                                //init_eurofinal_draw();        /* this generates all 16 teams putting into groups */
+
+****** bak\frontend.c
+
+                                init_eurofinal_draw();  /* this generates all 16 teams putting into groups */
+
+******
+
+****** FRONTEND.C
+{
+void *funcs[]={
+        &friendly_thread,
+        &league_thread,
+        &knockout_thread,
+        &territory_thread,
+        &classic_thread,
+        &euro2000_thread,
+        &euro_final_thread,
+        &worldcup_thread,
+        &euro2000_thread,
+        &euro2000_thread,
+        &euro2000_thread,
+        &euro2000_thread,
+        &euro2000_thread,
+};
+
+        if ( share->new_game == NO )
+****** bak\frontend.c
+{
+        if ( share->new_game == NO )
+******
+
+****** FRONTEND.C
+                        {
+                        share->title_func = funcs[ share->game_type ];
+                                
+                        if ( (share->game_type == EURO2000_KO) || (share->game_type == EUROFINAL_KO) )
+****** bak\frontend.c
+                        {
+                        if ( (share->game_type == EURO2000_KO) || (share->game_type == EUROFINAL_KO) )
+******
+
+

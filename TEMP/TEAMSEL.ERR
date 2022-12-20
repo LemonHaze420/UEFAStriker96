@@ -1,0 +1,9 @@
+ccpsx -c -W -g  -comments-c++ -DVER=0 -DNTSC=YES cmplogic.c -o object\\cmplogic.obj
+ccpsx -c -W -g  -comments-c++ -DVER=0 -DNTSC=YES teamsel.c -o object\\teamsel.obj
+TEAMSEL.C: In function `calc_teams_to_generate':
+TEAMSEL.C:1466: parse error at end of input
+Error(E42): Last command making (object\\teamsel.obj) returned a bad status
+Error(E02): Make execution terminated
+
+D:\striker\src>
+

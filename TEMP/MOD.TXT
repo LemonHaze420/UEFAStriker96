@@ -1,0 +1,135 @@
+ {
+-TEX_BLOK_NAME-    mod.tex		 # Texture blok filename
+-TEX_DETAIL_NAME-  mod.ted		 # Texture detail source filename
+-TEXT_DESTINATION- 512,0,511,512	 # Texture VRAM x,y,w,h usage area
+-CLUT_DESTINATION- 768,441,256,70	 # Clut VRAM x,y,w,h usage area
+-INTERACTIVE-      0			 # 1 = wait for key between texture fits
+-VIEW_TEXTURE-     0			 # 1 = view texture we are fitting
+-ANIM_DEFS_NAME-   \striker\src\anim.def # Global def file
+-ANIM_DATA_NAME-   anim.san		 # Animation data filename
+}
+
+-EXCLUDE_FILES-
+{
+}
+
+-MODEL_FILES-
+{
+player.skn
+}
+
+-ANIM_FILES-
+{
+sprtims\logo0.tim -cxy
+sprtims\bar01.tim -cxy
+sprtims\shelshad.tim -cxy
+sprtims\icon01.tim -cxy
+sprtims\pconlin0.tim -cxy
+sprtims\teampad0.tim -cxy
+sprtims\confpad.tim -cxy
+sprtims\slider1.tim -cxy
+sprtims\tit_bg1.tim
+..\gfx\milford\milft000.tim -cxy
+..\gfx\tinyfont\tyfnt000.tim -cxy
+..\gfx\titlefnt\titft000.tim -cxy
+sprtims\ts_drop.tim
+sprtims\stad_a.tim -cxy
+sprtims\stad_b.tim -cxy
+sprtims\stad_c.tim -cxy
+sprtims\stad_d.tim -cxy
+sprtims\stad_e.tim -cxy
+#sprtims\prestr00.tim -cxy
+#sprtims\stadpc_a.tim -cxy
+#sprtims\stadpc_b.tim -cxy
+#sprtims\stadpc_c.tim -cxy
+#sprtims\stadpc_d.tim -cxy
+sprtims\dur0.tim -cxy
+sprtims\epl0.tim -cxy
+sprtims\ofs0.tim -cxy
+sprtims\wea0.tim -cxy
+sprtims\win0.tim -cxy
+sprtims\ref0.tim -cxy
+sprtims\tes_aa.tim
+sprtims\tes_ab.tim
+sprtims\tes_ac.tim
+sprtims\tes_ad.tim
+sprtims\tes_ae.tim
+sprtims\tes_af.tim
+sprtims\tes_ag.tim
+sprtims\tes_ah.tim
+sprtims\tes_ai.tim
+sprtims\tes_aj.tim
+sprtims\tes_ak.tim
+sprtims\tes_al.tim
+sprtims\tes_am.tim
+sprtims\tes_an.tim
+sprtims\tes_ao.tim
+sprtims\tes_ap.tim
+sprtims\tes_aq.tim
+sprtims\tes_ar.tim
+sprtims\tes_as.tim
+sprtims\tes_at.tim
+sprtims\tes_au.tim
+sprtims\tes_av.tim
+sprtims\tes_aw.tim
+sprtims\tes_ax.tim
+sprtims\tes_ay.tim
+sprtims\tes_az.tim
+sprtims\tes_ba.tim
+sprtims\tes_bb.tim
+sprtims\tes_bc.tim
+sprtims\tes_bd.tim
+sprtims\tes_be.tim
+sprtims\tes_bf.tim
+sprtims\tes_bg.tim
+sprtims\tes_bh.tim
+sprtims\tes_bi.tim
+sprtims\tes_bj.tim
+sprtims\tes_bk.tim
+sprtims\tes_bl.tim
+sprtims\tes_bm.tim
+sprtims\tes_bn.tim
+sprtims\tes_bo.tim
+sprtims\tes_bp.tim
+sprtims\tes_bq.tim
+sprtims\tes_br.tim
+sprtims\tes_bs.tim
+sprtims\tes_bt.tim
+sprtims\tes_bu.tim
+sprtims\tes_bv.tim
+sprtims\tes_bw.tim
+sprtims\tes_bx.tim
+sprtims\tes_by.tim
+sprtims\tes_bz.tim
+sprtims\tes_ca.tim
+sprtims\tes_cb.tim
+sprtims\tes_cc.tim
+sprtims\tes_cd.tim
+sprtims\tes_ce.tim
+sprtims\tes_cf.tim
+sprtims\tes_cg.tim
+sprtims\tes_ch.tim
+sprtims\tes_ci.tim
+sprtims\tes_cj.tim
+sprtims\tes_ck.tim
+sprtims\tes_cl.tim
+sprtims\tes_cm.tim
+sprtims\tes_cn.tim
+sprtims\tes_co.tim
+sprtims\tes_cp.tim
+sprtims\tes_cq.tim
+sprtims\tes_cr.tim
+sprtims\tes_cs.tim
+sprtims\tes_ct.tim
+sprtims\tes_cu.tim
+sprtims\tes_cv.tim
+sprtims\tes_cw.tim
+sprtims\tes_cx.tim
+sprtims\tes_cy.tim
+sprtims\tes_cz.tim
+sprtims\tes_da.tim
+sprtims\tes_db.tim
+sprtims\flgbord.tim
+}    
+
+

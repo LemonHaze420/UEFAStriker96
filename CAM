@@ -1,0 +1,323 @@
+File FONT.C:
+                        sprite->y.w.hi = y + (frame->yoffs*SCREEN_UNIT_HT)/share->screen_yres;
+                        x +=  ((frame->real_w*SCREEN_UNIT_WD)/share->screen_xres ) + font->font_data->x_gap_size;
+                        temp = sprite->y.w.hi + ((frame->h*SCREEN_UNIT_HT)/share->screen_yres);
+                                                temp = sprite->x.w.hi  + ((frame->real_w*SCREEN_UNIT_WD)/share->screen_xres );
+                                                temp = sprite->x.w.hi  + ((frame->real_w*SCREEN_UNIT_WD)/share->screen_xres );
+                                                temp = sprite->x.w.hi  + ((frame->real_w*SCREEN_UNIT_WD)/share->screen_xres );
+File OPTIONS.C:
+        share->options_presets[0]=1;
+        share->options_presets[1]=0;
+        share->options_presets[2]=0;
+        share->options_presets[3]=0;
+        share->options_presets[4]=0;
+        share->options_presets[5]=0;
+        share->options_presets[6]=0;
+                set_button_gadget( &opt_button[cnt], 0, -(51*4)+(y*17*4)+60-(16*4), opt_button_names[share->language][cnt] ,opt_button_content_lists[ cnt ],share->options_presets[cnt], MILFORD_FONT, FONT_XC, tslot_poses[MAIN_TSLOT]+cnt, cnt,-1 );
+        set_title_lolly( opt_lolly_text[share->language] );
+                        index = but->gadget->selected_num + (share->language* (but->total_words+1)); 
+                share->options_presets[ cnt ] = opt_button[cnt].gadget->selected_num;
+File PAD.C:
+                share->pad_disabled[cnt]=NO;
+                if ( share->pad_disabled[cnt]==NO )
+File SHELL.C:
+                text = shell_type_word_list[share->language][type];
+File TEAMEDIT.C:
+//                      pl = &share->player_detail[ team ] [ player ];
+                        share->player_detail[ team ] [ player ] = custom_players[team][player];
+        pl = &share->player_detail[ pl_ed_current_team ][ pl_ed_current_player ];
+        set_button_gadget( &pl_ed_buttons[cnt], ((-96*4)+40)/2, -(65*4)+(y*21*4)+100, pl_ed_button_names[share->language][cnt] , 0, 0, MILFORD_FONT, FONT_XC, tslot_poses[MAIN_TSLOT]+cnt, cnt,-1 );
+                        set_button_gadget( &pl_ed_buttons[cnt], (-(170*4)+( x*140*4)+40)/2, -(65*4)+(y*21*4)+100, pl_ed_button_names[share->language][cnt] ,pl_ed_button_lists[cnt], 0, MILFORD_FONT, FONT_XC, tslot_poses[MAIN_TSLOT]+cnt, cnt,-1 );
+        set_button_gadget( &pl_ed_buttons[cnt], (-(170*4)+( 70*4)+40)/2, -(65*4)+(y*21*4)+100, pl_ed_button_names[share->language][cnt] ,pl_ed_button_lists[cnt], 0, MILFORD_FONT, FONT_XC, tslot_poses[MAIN_TSLOT]+cnt, cnt, -1 );
+        set_title_lolly( edit_player_txt[share->language] );
+        pl = &share->player_detail[ pl_ed_current_team ][ pl_ed_current_player ];
+                sprintf(pl_ed_text_buffer, "%s : %s\n",pl_ed_player_words[te_player_type][share->language], pl->name );
+                sprintf(pl_ed_text_buffer, "%s %d : %s\n",pl_ed_player_words[te_player_type][share->language], pl_ed_current_player+1, pl->name );
+        pl = &share->player_detail[ pl_ed_current_team ][ pl_ed_current_player ];
+                        pl = &share->player_detail[ pl_ed_current_team ][ pl_ed_current_player ];
+                pl = &share->player_detail[ pl_ed_current_team ] [ pl_ed_current_player ];
+//      pl = &share->player_detail[ pl_ed_current_team ][ pl_ed_current_player ];
+//      te = &share->team_detail[ pl_ed_current_team ];
+        te = share->team_detail;
+        te = share->team_detail;
+                share->team_detail[cnt] = custom_teams[cnt];
+        pl = &share->player_detail[ pl_ed_current_team ][ pl_ed_current_player ];
+        te = &share->team_detail[ pl_ed_current_team ];
+        set_button_gadget( &te_ed_button_gads[cnt], (-84*4)/2, -(60*4) + (y*21*4)-(16*4), pl_ed_button_names[share->language][0] ,0,0, MILFORD_FONT, FONT_XC, tslot_poses[MAIN_TSLOT]+cnt, cnt,-1 );
+                                set_button_gadget( &te_ed_button_gads[cnt], (-(126*4)+(x*55*2*4))/2, -(60*4) + (y*21*4)-(16*4), te_ed_button_names[share->language][cnt] ,te_ed_button_lists[cnt],0, MILFORD_FONT, FONT_XC, tslot_poses[MAIN_TSLOT]+cnt, cnt,-1 );
+                                set_button_gadget( &te_ed_button_gads[cnt], (-(84*4)+(x*100*2)-20)/2, -(60*4) + (y*21*4)-(16*4), te_ed_button_names[share->language][cnt] ,te_ed_button_lists[cnt],0, MILFORD_FONT, FONT_XC, tslot_poses[MAIN_TSLOT]+cnt, cnt,-1 );
+        set_title_lolly( edit_team_txt[share->language] );
+        index = but->gadget->selected_num + (share->language* (but->total_words+1)); 
+                                        te = &share->team_detail[ pl_ed_current_team ];
+        //FntPrint("name %x\n",share->team_detail[pl_ed_current_team].name );
+        //FntPrint("shr st %d,%d\n",share->team_detail[pl_ed_current_team].shirt_style[0], share->team_detail[pl_ed_current_team].shirt_style[1] );
+        //FntPrint("shr c1 %d,%d\n",share->team_detail[pl_ed_current_team].shirt_color1[0], share->team_detail[pl_ed_current_team].shirt_color1[1] );
+        //FntPrint("shr c2 %d,%d\n",share->team_detail[pl_ed_current_team].shirt_color2[0], share->team_detail[pl_ed_current_team].shirt_color2[1] );
+        //FntPrint("sle st %d,%d\n",share->team_detail[pl_ed_current_team].sleeve_style[0], share->team_detail[pl_ed_current_team].sleeve_style[1] );
+        //FntPrint("sle c1 %d,%d\n",share->team_detail[pl_ed_current_team].sleeve_color1[0], share->team_detail[pl_ed_current_team].sleeve_color1[1] );
+        //FntPrint("sle c2 %d,%d\n",share->team_detail[pl_ed_current_team].sleeve_color2[0], share->team_detail[pl_ed_current_team].sleeve_color2[1] );
+        //FntPrint("sho st %d,%d\n",share->team_detail[pl_ed_current_team].short_style[0], share->team_detail[pl_ed_current_team].short_style[1] );
+        //FntPrint("sho c1 %d,%d\n",share->team_detail[pl_ed_current_team].short_color1[0], share->team_detail[pl_ed_current_team].short_color1[1] );
+        //FntPrint("sho c2 %d,%d\n",share->team_detail[pl_ed_current_team].short_color2[0], share->team_detail[pl_ed_current_team].short_color2[1] );
+        //FntPrint("sok st %d,%d\n",share->team_detail[pl_ed_current_team].sock_style[0], share->team_detail[pl_ed_current_team].sock_style[1] );
+        //FntPrint("sok c1 %d,%d\n",share->team_detail[pl_ed_current_team].sock_color1[0], share->team_detail[pl_ed_current_team].sock_color1[1] );
+        //FntPrint("sok c2 %d,%d\n",share->team_detail[pl_ed_current_team].sock_color2[0], share->team_detail[pl_ed_current_team].sock_color2[1] );
+        te = &share->team_detail[ pl_ed_current_team ];
+        sprintf(te_ed_num_buffer, "%s %d : ",te_ed_team_button_names[share->language], pl_ed_current_team+1 );
+        strcpy( te_pl_type_name_buff, pl_ed_player_words[te_player_type][share->language] );
+        pl = &share->player_detail[ pl_ed_current_team ][ pl_ed_current_player ];
+        te = &share->team_detail[ pl_ed_current_team ];
+        pl = &share->player_detail[ pl_ed_current_team ][ pl_ed_current_player ];
+        pl = &share->player_detail[ pl_ed_current_team ][ pl_ed_current_player ];
+        te = &share->team_detail[ pl_ed_current_team ];
+        te = &share->team_detail[ pl_ed_current_team ];
+Player_detail *pl = &share->player_detail[ pl_ed_current_team ][ pl_ed_current_player ];
+        pl = &share->player_detail[ pl_ed_current_team ][ pl_ed_current_player ];
+        te = &share->team_detail[ team ];
+File UTILS.C:
+        FntOpen( 16, NTSC?9:6, share->screen_xres-16, share->screen_yres, 0, 1200);
+File VRAMPEEK.C:
+        xres = share->screen_xres;
+        yres = share->screen_yres;
+File ANIM.C:
+                share->animation_reset_flag = YES;
+File CAMERA.C:
+                mat->m[0][0] = mat->m[0][0] * share->screen_xres / camera.x_aspect;
+                mat->m[0][1] = mat->m[0][1] * share->screen_xres / camera.x_aspect;
+                mat->m[0][2] = mat->m[0][2] * share->screen_xres / camera.x_aspect;
+//              mat->m[1][0] = mat->m[1][0] * 2; //share->screen_xres / camera.x_aspect;
+//              mat->m[1][1] = mat->m[1][1] * 2; //share->screen_xres / camera.x_aspect;
+//              mat->m[1][2] = mat->m[1][2] * 2; //share->screen_xres / camera.x_aspect;
+File FRONTEND.C:
+        share->game_type = LEAGUE;
+        share->teams_in_competition = 2;
+        share->game_type = FRIENDLY;
+        strcpy( share->team1_name_string, get_team_name( share->team1 ) );
+        strcpy( share->team2_name_string, get_team_name( share->team2 ) );
+        share->demo_mode = YES;
+        share->team1 = make_random_number( MAX_NON_USER_TEAMS-1 );
+        share->team2 = make_random_number( MAX_NON_USER_TEAMS-1 );
+        share->team1_cpu = share->team2_cpu = YES;
+        while( share->team2 == share->team1 )
+                share->team2 = make_random_number( MAX_NON_USER_TEAMS-1 );
+        share->options_presets[ OPT_STADIUM ] = make_random_number( 4 );
+        share->options_presets[ OPT_WEATHER ] = make_random_number( 5 );
+File HARDWARE.C:
+        share->screen_xres = wd;
+        share->screen_yres = ht;
+                db[cnt]->disp.screen.x = share->screen_xpos; //SCREEN_X;  
+                db[cnt]->disp.screen.y = 0; //share->screen_ypos; //SCREEN_Y;  
+        wd = share->screen_xres;
+        ht = share->screen_yres;
+                        share->screen_xpos--;
+                        share->screen_xpos++;
+                        share->screen_ypos--;
+                        share->screen_ypos++;
+                share->screen_xpos--;
+                share->screen_xpos++;
+                share->screen_ypos--;
+                share->screen_ypos++;
+        cdb->disp.screen.x = share->screen_xpos;
+        cdb->disp.screen.y = share->screen_ypos;
+//      FntPrint("xy=%d %d\b",share->screen_xpos, share->screen_ypos );
+File MAIN.C:
+        if ( share->stub_code != STUB_CODE )
+        //share->stub_code = STUB_CODE+1;                       
+        printf("stub code=%x do_once_init=%d\n",share->stub_code,share->do_once_init );
+        save_screen_grab ( share->screen_xres,share->screen_yres,3 );
+        mrect.w = share->screen_xres;
+        mrect.w = share->screen_xres;
+        if (share->stub_code == STUB_CODE)
+                if ( share->do_once_init == YES )
+                        share->do_once_init = NO;       // don't perform once_only_init again
+        share->animation_reset_flag = 0;
+        share->game_type = FRIENDLY;
+        share->screen_xpos = 0; 
+        share->screen_ypos = NTSC?3:22;
+        share->master_volume = 128;
+        share->music_volume = 128;
+        share->com_volume = 128;
+        share->sfx_volume = 128;
+        share->sound_mode = FR_STEREO;
+        printf("Demo mode is %s\n",share->demo_mode?"On":"Off" );
+        printf("team 1 num = %d  name='%s'  (%s)\n",share->team1, share->team1_name_string, humtxt[share->team1_cpu] );
+        printf("team 2 num = %d  name='%s'  (%s)\n",share->team2, share->team2_name_string, humtxt[share->team2_cpu] );
+        printf("stadium    = %d\n",share->options_presets[ OPT_STADIUM ]);
+        printf("weather    = %d\n",share->options_presets[ OPT_WEATHER ]);
+        share->screen_xres = 512;
+        share->screen_yres = 256;
+File TEAMSEL.C:
+        if ( share->game_type == FRIENDLY )
+                ts_source_team_list = &ts_all_teams_list[ share->language ][0];
+                share->teams_selection_size = TOTAL_FLAGS;
+        if ( share->game_type == LEAGUE )
+                ts_source_team_list = &ts_all_teams_list[ share->language ][0];
+                share->teams_selection_size = TOTAL_FLAGS;      // can choose ANY team to play
+        teams = share->teams_selection_size;
+        set_title_lolly( def_team_lolly_text[share->language] );
+        if ( share->game_type == FRIENDLY )
+                share->team1 = share->selected_teams_list[0];
+                share->team2 = share->selected_teams_list[1];
+        if ( share->game_type == LEAGUE )
+                share->team1 = share->selected_teams_list[0];
+                share->team2 = share->selected_teams_list[1];
+                share->team1_cpu = share->cpu_teams_list[0];
+                share->team2_cpu = share->cpu_teams_list[1];
+        teams_to_generate = share->teams_in_competition - ts_total_teams;
+        if ( share->game_type == LEAGUE )
+                                        rand_team = make_random_number( share->teams_selection_size-1 );
+//                      flag_index = team_index_lists[share->language][ flag_index ];
+                        if ( share->teams_in_competition > ts_total_teams )
+//      team = team_index_lists[ share->language ][ team ];
+                txt = share->team_detail[team-MAX_NON_USER_TEAMS].name;
+                txt = team_names[share->language][team];
+                team_num = share->selected_teams_list[ cnt + yhi ];
+                        if ( (ts_team_num == share->selected_teams_list[cnt+yhi]) && ( ts_scroll_window == NO ) && ( shell->master_option_active == NO) )
+//      team_num = team_index_lists[ share->language ][ ts_team_num ];
+//      ts_team_num = team_index_lists[ share->language ][ ts_team_num ];
+                        if ( ts_team_num == share->selected_teams_list[ y ] )
+        share->game_difficulty = 0;
+        set_title_lolly( select_num_teams_lolly_text[share->language] );
+        if ( share->game_type == LEAGUE )
+                share->teams_in_competition = 8;
+                share->total_human_teams = 2;
+        if ( share->game_type == KNOCKOUT )
+                share->teams_in_competition = 8;
+                share->total_human_teams = 2;
+                if ( share->game_type == LEAGUE )
+                        modify_word( &share->teams_in_competition , 2,8 );
+                if ( share->game_type == KNOCKOUT )
+                        share->teams_in_competition = snt_knockout_list[ snt_team_cnt ];
+                modify_word( &share->total_human_teams , 0,share->teams_in_competition );
+                modify_word( &share->game_difficulty , 0,2 );
+        if ( share->total_human_teams > share->teams_in_competition )
+                share->total_human_teams = share->teams_in_competition;
+        sprintf( text_buffer, "%s : %d",snt_totteams_txt[share->language],share->teams_in_competition );
+        sprintf( text_buffer, "%s : %d",snt_humteams_txt[share->language],share->total_human_teams );
+        sprintf( text_buffer, "%s : %s",snt_diff_txt2[share->language], snt_diff_txt1[share->language][share->game_difficulty] );
+                share->cpu_teams_list[cnt] = YES;
+        for ( cnt=0; cnt< share->total_human_teams; cnt++ )
+                share->cpu_teams_list[cnt] = NO;
+                share->selected_teams_list[cnt] = -1;
+                if ( share->selected_teams_list[cnt] == team_num )
+                if ( share->selected_teams_list[cnt] == -1 )
+                        share->selected_teams_list[cnt] = team_num;
+                if ( share->selected_teams_list[cnt] == team )
+                                share->selected_teams_list[cnt2] = share->selected_teams_list[cnt2+1];
+                index = share->selected_teams_list[cnt];
+                if ( share->selected_teams_list[cnt] == team )
+File TITLE.C:
+                if ( share->demo_mode )
+        share->demo_mode = NO;
+File PRESET.C:
+                share->preset_data[ cnt ] = pre_defined_presets[ cnt ];
+        set_title_lolly( preset_lolly_text[share->language] );
+        text1 = get_team_name( share->preset_data[ pr_current_preset ].teams[ 0 ]);
+        text2 = get_team_name( share->preset_data[ pr_current_preset ].teams[ 1 ]);
+                option = share->preset_data[ pr_current_preset ].option_preset[ y ]; 
+                text1 = opt_button_names[share->language][y];
+        sprintf( text_buffer, "%s %d", preset_button_name[share->language], pr_current_preset+1 );
+        share->team1 = pd->teams[0];
+        share->team2 = pd->teams[1];
+                share->options_presets[ cnt ] = pd->option_preset[ cnt ]; 
+        share->team1_cpu = NO;
+        share->team2_cpu = NO;
+File ENTNAME.C:
+                        wd = (frame->real_w*SCREEN_UNIT_WD)/share->screen_xres;
+        set_title_lolly( edit_name_txt[share->language] );
+File FMV.C:
+        dec.disp[0].screen.x = share->screen_xpos;
+        dec.disp[0].screen.y = share->screen_ypos;
+        dec.disp[1].screen.x = share->screen_xpos;
+        dec.disp[1].screen.y = share->screen_ypos;
+File LANGSEL.C:
+        share->language=ENG;
+                        action( ls_movies_rt[share->language], 0 );
+                        share->language++;
+                        if ( share->language == MAX_LANGS )
+                                share->language = 0;
+                        share->language--;
+                        if ( share->language < 0 )
+                                share->language = MAX_LANGS-1;
+                        action( ls_movies_lt[share->language], 0 );
+        action ( LS_EXIT_MOVIES + share->language,0 );
+        share->language=0;
+        wd = text_wds[ share->language ];
+        src = lang_texts + srcs[ share->language ];
+File CONFIG.C:
+        set_title_lolly( audio_config_lolly_text[share->language] );
+        set_textstring_gadget( 0, &ac_tgad[cnt], -620, y+(ys*4*cnt)-(9*4), 0 ,ac_tgad_text[share->language][cnt], MILFORD_FONT,milford_font_logic, FONT_RJUST, tslot_poses[MAIN_TSLOT]+cnt, -2 );
+        set_slider_gadget( x+(45*4), y+(ys*4*cnt), &ac_slider[cnt], 100, 300, &share->master_volume, cnt );
+        set_textstring_gadget( 0, &ac_tgad[cnt], -620, y+(ys*4*cnt)-(9*4), 0 ,ac_tgad_text[share->language][cnt], MILFORD_FONT,milford_font_logic, FONT_RJUST, tslot_poses[MAIN_TSLOT]+cnt, -2 );
+        set_slider_gadget( x+(45*4), y+(ys*4*cnt), &ac_slider[cnt], 0, 255, &share->music_volume, cnt);
+        set_textstring_gadget( 0, &ac_tgad[cnt], -620, y+(ys*4*cnt)-(9*4), 0 ,ac_tgad_text[share->language][cnt], MILFORD_FONT,milford_font_logic, FONT_RJUST, tslot_poses[MAIN_TSLOT]+cnt, -2 );
+        set_slider_gadget( x+(45*4), y+(ys*4*cnt), &ac_slider[cnt], 0, 255, &share->com_volume, cnt );
+        set_textstring_gadget( 0, &ac_tgad[cnt], -620, y+(ys*4*cnt)-(9*4), 0 ,ac_tgad_text[share->language][cnt], MILFORD_FONT,milford_font_logic, FONT_RJUST, tslot_poses[MAIN_TSLOT]+cnt, -2 );
+        set_slider_gadget( x+(45*4), y+(ys*4*cnt), &ac_slider[cnt], 0, 255, &share->sfx_volume, cnt);
+        ac_master_volume_store = share->master_volume;
+        ac_music_volume_store = share->music_volume;
+        ac_com_volume_store = share->com_volume;
+        ac_sfx_volume_store = share->sfx_volume;
+        ac_sound_mode_store = share->sound_mode;
+        ts = add_text_string ( tslot_poses[MAIN_TSLOT]+4 , audio_words[share->language][share->sound_mode], MILFORD_FONT, milford_font_logic, (ac_x+232)/2, ac_y+(ac_ys*4*cnt)-(9*4), FONT_XC, -1, 0, 0, 0 );
+                modify_word( &share->sound_mode, 0,1 );
+                share->master_volume = ac_master_volume_store;
+                share->music_volume = ac_music_volume_store;
+                share->com_volume = ac_com_volume_store;
+                share->sfx_volume = ac_sfx_volume_store;
+                share->sound_mode = ac_sound_mode_store;
+        set_title_lolly( screen_pos_lolly_text[share->language] );
+        screen_xpos_store = share->screen_xpos;
+        screen_ypos_store = share->screen_ypos;
+        set_button_gadget( &scn_pos_info_button, 0, -40*4, scn_pos_info_text[share->language] ,0,0, MILFORD_FONT, FONT_XC, tslot_poses[MAIN_TSLOT]+2, -1,-1 );
+        ts = add_text_string ( tslot_poses[MAIN_TSLOT]+0 , screen_pos_text[share->language][scn_pos_mode], MILFORD_FONT, milford_font_logic, sp_x/2, sp_y, FONT_XC, -1, 0, 10, 12 );
+                        if ( share->screen_xpos > -20 )
+                                share->screen_xpos--;
+                                share->screen_xpos = -20;
+                        if ( share->screen_xpos < 20 )
+                                share->screen_xpos++;
+                                share->screen_xpos=20;
+                        if ( share->screen_ypos > 1 )
+                                share->screen_ypos--;
+                                share->screen_ypos=1;
+                        if ( share->screen_ypos < 20 )
+                                share->screen_ypos++;
+                                share->screen_ypos=20;
+        FntPrint("sxy=%d %d\n",share->screen_xpos, share->screen_ypos);
+                share->screen_xpos = screen_xpos_store;
+                share->screen_ypos = screen_ypos_store;
+                share->pad_config[cnt]=0; // all pad configs default to ZERO
+        set_title_lolly( pad_config_lolly_txt[share->language] );
+        num = share->pad_config[ joy_curr ] + 1; // goes 1,2,3,4
+        sprintf( text_buffer, "%s %d", pad_config_words[share->language], num );
+                modify_word( &share->pad_config[ joy_curr ], 0,3 );
+                text_group = share->pad_config[ joy_curr ];
+                text = pc_button_text[ share->language ][ text_num ];
+        share->team1 = 0;
+        share->team2 = 0;
+//      share->team1 = 56;
+//      share->team2 = 16;
+        if ( share->game_type == FRIENDLY )
+                share->team1_cpu = NO;
+                share->team2_cpu = NO;
+        set_title_lolly( pad_assign_lolly_txt[share->language] );
+        if ( share->team1_cpu == YES )
+        if ( share->team2_cpu == YES )
+                share->human_player_side[y] = 0;
+        if ( share->team2_cpu )
+        if ( share->team1_cpu )
+        team_txt = get_team_name( share->team1 );
+        team_txt = get_team_name( share->team2 );
+                if ( share->human_player_side[cnt] == -1 )
+                if ( share->human_player_side[cnt] == 1 )
+                share->team1_cpu = YES;
+                share->team2_cpu = YES;
+                        if ( share->team1_cpu == YES )
+                        if ( share->team2_cpu == YES )
+                                        if ( share->human_player_side[cnt] > lt_limit )
+                                                share->human_player_side[cnt]--;
+                                        if ( share->human_player_side[cnt] != rt_limit )
+                                                share->human_player_side[cnt]++;
+                        if ( share->human_player_side[cnt] == 0 )
+                        if ( share->human_player_side[cnt] == 1 )
+                        if ( share->human_player_side[cnt] == -1 )

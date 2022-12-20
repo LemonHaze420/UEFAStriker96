@@ -1,0 +1,57 @@
+
+
+*** SAN file format details ****
+
+ Sprite ANimation file outputted by Maptims.exe
+
+ LONG  ( index to Spr_anim_header )
+ LONG
+ LONG 
+ etc.	  for however many animation types * walk, run, fall , etc
+
+ Spr_anim_header
+ {
+ UWORD frames,
+ UWORD clut,
+ }
+
+ followed directly by
+ Spr_anim_frame,
+ Spr_anim_frame,
+ Spr_anim_frame, 
+ etc // for however many frames of animation
+ 
+
+ Spr_anim_frame
+ {
+ tpage,
+ w,h
+ u,v
+ }
+
+ 
+
+	
+***************************************************************
+*  			 				      *	
+*  The SAN file has an accompanying SDF file ( SAN DEF FILE ) *
+*  			 				      *	
+***************************************************************
+
+ When passing the .TXT file to maptims....
+ 
+ -ANIM_FILES-	( list of 
+ {
+ stand.tim	// No number on end, so it's a single animation
+ fred01.tim	// looks for further files eg fred02.tim etc
+ impale1.tim	// looks for further files eg impale2.tim etc
+ }
+
+This will create an .SDF
+
+ #define STAND	0	// animation type
+ #define FRED	1	// 
+ #define IMPALE 2
+
+
+

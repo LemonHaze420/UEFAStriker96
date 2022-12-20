@@ -1,0 +1,22 @@
+
+World Cup '98	5
+Euro 2000	8
+Euro 2000 Final 5
+Classic match	2
+
+Records		?
+Training	2
+
+
+Add FMV		2	
+Add sfx and music	2
+Add foreign text	2
+Save configuration	1
+Auto load configuration	1
+Finish player editor	2
+Finish team editor	2
+Friendly preset		1
+Add extra graphics	10
+
+
+

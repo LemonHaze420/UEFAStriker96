@@ -1,0 +1,16 @@
+LONG springforce( LONG k, LONG offset, LONG *last_k, LONG damper);
+void cap( LONG *v, LONG minmax );
+void get_vspring_force( Vspring *s, VECTOR *o, VECTOR *v, VECTOR *lk );
+void attatch( Object *buggy, Object *wheel );
+void brake( Object *obj );
+void deck_it( Object *obj );
+LONG fuzzy_moment( LONG mass, LONG side );
+void start_a_buggy( LONG x, LONG y, LONG z );
+void wheels( Object *obj );
+void task_wheel( Object *obj );
+void task_shadow( Object *obj );
+void task_whatsup( Object *obj );
+
+void task_buggy( Object *obj );
+
+

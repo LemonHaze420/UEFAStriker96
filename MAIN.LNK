@@ -1,0 +1,98 @@
+
+	org	0x8001dbe0
+	regs	pc=__SN_ENTRY_POINT
+
+
+rdata	group
+data	group
+text	group
+sdata	group
+sbss	group	bss
+bss	group	bss
+ctors	group
+dtors	group
+limbo	group   
+dcache	group	bss, org($1f800000), size(1024)
+
+	section	.rdata, rdata
+	section	.data, data
+	section	.text, text
+	section	.sdata, sdata
+	section	.sbss, sbss
+	section	.bss, bss
+	section	.ctors, ctors
+	section	.dtors, dtors
+	section	.limbo, limbo
+	section	afterburner, dcache
+
+
+;****************************************************************
+;*	Any libraries that may need investigating 		*
+;****************************************************************
+ inclib c:\psx\lib.43\lib\libcd.lib
+ inclib c:\psx\lib.43\lib\libc.lib
+ inclib c:\psx\lib.43\lib\libgs.lib
+ inclib c:\psx\lib.43\lib\libapi.lib
+ inclib c:\psx\lib.43\lib\libsn.lib
+ inclib c:\psx\lib.43\lib\libetc.lib
+ inclib c:\psx\lib.43\lib\libgte.lib
+ inclib c:\psx\lib.43\lib\libgpu.lib
+ inclib c:\psx\lib.43\lib\libtap.lib
+ inclib c:\psx\lib.43\lib\libspu.lib
+ inclib c:\psx\lib.43\lib\libsnd.lib
+ inclib c:\psx\lib.43\lib\libpress.lib
+ inclib c:\psx\lib.43\lib\libds.lib
+ inclib c:\psx\lib.43\lib\libcard.lib
+ inclib c:\psx\lib.43\lib\libmcrd.lib
+ include "c:\psx\lib.43\lib\none3.obj"
+ inclib "movie.lib"
+
+
+;****************************************************************
+;*	object files to link 					*
+;****************************************************************
+ include "object\manage.obj"
+ include "object\cdaudio.obj"
+ include "object\territ.obj"
+ include "object\knockout.obj"
+ include "object\cmplogic.obj"
+ include "object\memcard.obj"
+ include "object\hwcard.obj"
+ include "object\league.obj"
+ include "object\config.obj"
+ include "object\shell.obj"
+ include "object\title.obj"
+ include "object\teamsel.obj"
+ include "object\skindraw.obj"
+ include "object\teamedit.obj"
+ include "object\entname.obj"
+ include "object\preset.obj"
+ include "object\text.obj"
+ include "object\options.obj"
+ include "object\gadget.obj"
+ include "object\font.obj"
+ include "object\frontend.obj"
+ include "object\render.obj"
+ include "object\polydraw.obj"
+ include "object\anim.obj"
+ include "object\utils.obj"
+ include "object\scene.obj"
+ include "object\general.obj"
+ include "object\camera.obj"
+ include "object\light.obj"
+ include "object\pad.obj"
+ include "object\main.obj"
+ include "object\hardware.obj"
+ include "object\fvars.obj"
+ include "object\io.obj"
+ include "object\sprite.obj"
+ include "object\sound.obj"
+ include "object\mem.obj"
+ include "object\unpropak.obj"
+ include "object\plasma.obj"
+
+
+;dcache group	bss,ORG($1f800000),SIZE(1024)
+
+	section rapid,dcache
+

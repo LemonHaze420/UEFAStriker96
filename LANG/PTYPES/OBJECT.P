@@ -1,0 +1,7 @@
+void process_objects( void );
+Object *get_free_object( Object *obj );
+void dmode_line( Object *obj );
+void dmode_line_gt4( Object *obj );
+void dmode_line_gt3( Object *obj );
+void check_lod( Object *obj );
+

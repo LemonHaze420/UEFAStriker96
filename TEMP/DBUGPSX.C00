@@ -1,0 +1,128 @@
+#version
+ 4.113
+#readram0
+ 00000000  007FFFFF
+ 80000000  807FFFFF
+ A0000000  A07FFFFF
+ BFC00000  BFC0FFFF
+ 1F800000  1F800400
+#writeram0
+ 00000000  007FFFFF 
+ 80000000  807FFFFF 
+ A0000000  A07FFFFF 
+#update
+ FF 0008
+#video
+ 03 84 3C
+#label level
+ 02 00 00
+#colour attributes
+ 17 20 60 40 1F 2F 6F 4F 3E B0 4F 5E 0C 70 C0 87 8E 8E F0 90 4F 87 7C 0E 0A 70
+#mono attributes
+ 07 07 07 07 0F 0F 0F 0F 70 70 07 70 0F 70 01 07 0F 0F 70 0F 07 07 70 07 07 70
+#default tabs
+ 68K 0F 17 28 30 00 00 00 00
+ 658 0F 17 28 30 00 00 00 00
+ Z80 0F 17 28 30 00 00 00 00
+ C   04 00 00 00 00 00 00 00
+#expression C/ASM flags
+ 00 FF 00 00 00
+#window
+ 01 00 00 00
+ 00 01 66 0A 2A 07
+ 00000000
+#window
+ 85 00 40 00
+ 00 0A 41 3A 08 0B
+ 00000302
+#file
+D:\STRIKER\SRC\FONT.C
+#tabs
+ 04 00 00 00 00 00 00 00
+
+#window
+ 03 00 40 00
+ 41 0A 83 17 4B 0B
+ 80122EC4
+#window
+ 07 00 40 00
+ 41 24 83 2F 4B 25
+ 00000000
+#window
+ 04 00 40 00
+ 41 2F 83 3A 4B 36
+ 00000000
+#watches
+ 80 00 08
+ shell->lt_indicator_sprite->x.w.hi
+ 80 00 08
+ shell->rt_indicator_sprite->x.w.hi
+ 80 00 08
+ shell->lt_indicator_sprite->y.w.hi
+ 80 00 08
+ shell->lt_indicator_sprite->display
+ 80 00 08
+ shell->rt_indicator_sprite->display
+ 80 00 08
+ rslt
+ 80 00 08
+ mc->card_busy[0]
+ 80 00 08
+ mc
+ 80 00 08
+ mc->command
+ 80 00 08
+ share->game_type
+ 80 00 08
+ mc->total_specific_game_files[0]
+ 80 00 08
+ config
+ 80 00 08
+ config_store
+ 80 00 08
+ share->config_loaded
+
+#window
+ 06 00 00 00
+ 66 01 83 0A 6C 09
+ 00000000
+#window
+ 03 00 40 00
+ 41 17 83 24 6D 18
+ 8008EFFC
+#history
+ 02 memcard.c
+ 02 config.c
+ 02 config.c
+ 02 \global\striker.h
+ 02 config.c
+ 02 memcard.c
+ 02 hwcard.c
+ 02 hwcard.h
+ 07 6
+ 07 #1
+ 07 #128
+ 07 #128
+ 07 1
+ 07 #128
+ 07 0
+ 07 #255
+ 0A update_title_list
+ 0A config_auto_load
+ 0A do_mc_save
+ 0A do_mc_save
+ 0A 80122ec4
+ 0A restore_loaded_game_data
+ 0A config_auto_load
+ 0A config_auto_load
+ 0B friendly_thread
+ 0B shell_type_word_list
+ 0F memcard.c
+ 12 share->config_loaded
+ 12 config_store
+ 12 config
+ 12 mc->total_specific_game_files[0]
+ 12 share->game_type
+ 12 share->game_Type
+ 12 mc->command
+ 12 mc

@@ -1,0 +1,973 @@
+//#define MASTER
+
+#ifndef MASTER
+#define	DEBUG
+#else
+
+
+#endif
+
+
+//#define	NTSC
+
+//#define	TRUE	-1
+//#define	FALSE	0
+
+#define	_K *1024
+#define	_L <<16
+#define BIT(n)	(1<<n)
+#define	ABS(v) v>0?v:-v
+
+/* ot size 
+
+ bits		entries
+	0		0
+	1		2
+	2		4
+	3		8
+	4		16
+	5		32
+	6		64
+	7		128
+	8		256
+	9		512
+	10		1024
+	11		2048
+	12		4096
+	13		8192
+	14		16384
+
+
+
+*/
+
+//#define	OT_SIZE					9
+//#define	OT_SHIFT					( 15 - OT_SIZE )
+//#define	ORDERING_TABLE_SIZE	( 1 << OT_SIZE )
+//#define	NEAREST_DEPTH			1
+//#define	FURTHEST_DEPTH	  		ORDERING_TABLE_SIZE-1
+
+
+
+
+#ifdef NTSC
+#define	SCREEN_HEIGHT	240
+#define	VIDEO_MODE	0
+#define	DEFAULT_SCREEN_X_OFFSET	0
+#define	DEFAULT_SCREEN_Y_OFFSET	0
+#else
+#define	SCREEN_HEIGHT	256
+#define	VIDEO_MODE		1
+#define	DEFAULT_SCREEN_X_OFFSET	0
+#define	DEFAULT_SCREEN_Y_OFFSET	16
+#endif
+
+
+
+#define	FB1X	0
+#define	FB1Y	0
+#define	FB2X	0
+#define	FB2Y	256
+
+
+#define	SCREEN_WIDTH	512
+//#define	SCREEN_Z			( SCREEN_WIDTH >> 1 )
+
+#define MAX_INPUT_HOLES			2
+#define MAX_PADS_PER_MULTITAP	4
+#define TOTAL_PADS				( MAX_INPUT_HOLES * MAX_PADS_PER_MULTITAP )
+#define MISSING_TAP_0			BIT(0)
+#define MISSING_TAP_1			BIT(1)
+#define MISSING_PAD				BIT(0)
+#define IN_TAP						BIT(1)
+#define PADOUT						BIT(0)
+
+/************************************************************/
+/*	pad equates																*/
+/************************************************************/
+#define PAD_UP     	PAD_LU
+#define PAD_DOWN   	PAD_LD
+#define PAD_LEFT   	PAD_LL
+#define PAD_RIGHT  	PAD_LR
+#define PAD_TRIANGLE PAD_RU
+#define PAD_CROSS	 	PAD_RD
+#define PAD_SQUARE	PAD_RL
+#define PAD_CIRCLE	PAD_RR
+
+#define PAD_PAUSE   	PAD_SEL
+#define PAD_SELECT  	PAD_SEL
+#define PAD_TR      	PAD_FRT
+#define PAD_TR2     	PAD_FRB
+#define PAD_TL      	PAD_FLT
+#define PAD_TL2     	PAD_FLB
+#define PAD_PLAY    	PAD_START
+
+#define ANYBUTTON		(PAD_TRIANGLE|PAD_CROSS|PAD_SQUARE|PAD_CIRCLE|PAD_START)
+#define PAD_RESET		(PAD_TL|PAD_TL2|PAD_TR|PAD_TR2|PAD_UP|PAD_TRIANGLE)
+
+#define	ANY_PAD_DIRECTION			( PAD_UP|PAD_RIGHT|PAD_DOWN|PAD_LEFT )
+
+#define	ANY_PAD_BUTTON				( PAD_TRIANGLE|PAD_CIRCLE|PAD_CROSS|PAD_SQUARE )
+#define	ANY_PAD_SHOULDER_BUTTON ( PAD_TL|PAD_TR|PAD_TL2|PAD_TR2 )
+#define	ANY_PAD_ACTIVITY 			( ANY_PAD_DIRECTION|ANY_PAD_BUTTON )
+#define	BACK							PAD_TRIANGLE
+#define	SELECT						PAD_CROSS
+#define	TOGGLE						1
+
+#define	Set_rgb(s,red,green,blue)\
+	s.r=red;\
+	s.g=green;\
+	s.b=blue;
+
+
+
+#define	MAX_OBJECTS				20
+
+#define	OBJ_STANDBY				BIT(0)
+#define	OBJ_FREE					BIT(1)
+#define	OBJ_DISPLAY				BIT(2)
+#define	OBJ_TRACEGRID			BIT(3)
+#define	OBJ_FAR					BIT(4)
+#define	OBJ_ONSCREEN			BIT(5)
+#define	OBJ_SHADOW				BIT(6)
+#define	OBJ_MAT3					BIT(7)
+#define	OBJ_CHILD				BIT(8)
+#define	OBJ_WHEEL				BIT(9)
+#define	OBJ_HOST					BIT(10)
+#define	OBJ_BUGGY				BIT(11)
+#define	OBJ_NOCOLLISION 		BIT(12)
+#define	OBJ_ROTVECTOR			BIT(13)
+#define	OBJ_NOLOD				BIT(14)
+
+#define	PRIM_SETUP				BIT(0)
+#define	PRIM_ALLOC				BIT(1)
+#define	PRIM_DEALLOC  			BIT(2)
+
+
+#define	MAX_TRI							1300
+#define	MAX_QUAD							100
+#define	MAX_VERTEX						1300
+#define	MAX_CHILDREN					4
+
+
+#define	MAX_FAST_COLLISION_POINTS	12
+#define	MAX_COLLISION_POINTS			100
+
+/********************************************************************/
+/*	file control flags															*/
+/********************************************************************/
+#define	READ					0
+#define	WRITE					1
+#define	READ_WRITE			2
+
+#define	FROM_START			0
+#define	FROM_CURRENT		1
+#define	FROM_END				2
+
+#define	FILE_READ_ERROR	0	
+#define	FILE_TOO_BIG		2	
+
+#define	NORMAL				0
+#define	BAG					1
+
+#define	PAD_SIZE				2048
+#define  Sector(s) ((s+PAD_SIZE-1)/PAD_SIZE)
+
+enum	{ 
+	ROOT_DIR=0,
+	GFX_DIR,
+	SFX_DIR,
+	MODEL_DIR };
+
+#define	OK 			1
+#define	NOT_OK		0
+
+#define M_IDENTITY {{{4096,0,0},{0,4096,0},{0,0,4096}},{0,0,0}}
+#define M_CLEAR {{{0,0,0},{0,0,0},{0,0,0}},{0,0,0}}
+
+
+/*********************************************************/
+/*	timebar defs  														*/
+/*********************************************************/
+#define	TB_ACTIVE	1
+
+
+#define	FRAMES_PER_UPDATE	2
+
+
+#define	CALIBRATE			1
+
+
+
+
+#define dot(a,b) (((a).vx * (b).vx) + ((a).vy * (b).vy) + ((a).vz * (b).vz))
+#define VECTOR_SET(v,x,y,z) (v)->vx=x;(v)->vy=y;(v)->vz=z
+#define	PHYSICS(n,obj) (*physics[n])(obj)
+
+/************************************************************/
+/*																				*/
+/*	physics defs															*/
+/*																				*/
+/************************************************************/
+#define	PI	(3.141592654)
+#define	ANGULAR_VELOCITY_DAMP 98.5			// % angular velocity damping
+
+#define	VRES_SHIFT		8						// velocity fraction bits
+#define	AVRES_SHIFT		12						// angular velocity fraction bits
+#define	MOMENT_SHIFT	8 						// moment of inertia shift
+#define	MASS_SHIFT		8						// mass fraction bits
+
+
+#define	VRES			(1<<VRES_SHIFT) 				// velocity fraction bits
+#define	AVRES			(1<<AVRES_SHIFT)				// velocity fraction bits
+#define	GRAVITY  	(VRES * 1)
+#define	MASS			(1<<MASS_SHIFT)
+#define	MOMENT 		(1 << MOMENT_SHIFT)
+
+#define AV_PRESCALE	(ONE/(2*PI))
+
+
+#define	MAX_WAVES	64
+
+
+
+typedef struct
+{
+	float x,y,z;
+
+
+}VECTORF;
+
+typedef struct
+{
+	VECTOR	k;
+	VECTOR	damper;
+
+}Vspring;
+
+typedef struct
+{
+	LONG	k;
+	LONG	damper;
+
+}Spring;
+
+typedef struct
+{
+	WORD	x,y,z;
+
+}Maxis;
+
+typedef struct
+{
+	Maxis		xaxis;
+	Maxis		yaxis;
+	Maxis		zaxis;
+
+}Rotation;
+
+typedef struct
+{
+	Rotation	rotate;
+	VECTOR	translate;
+
+}RT;
+
+typedef union
+{
+	MATRIX		pmat;
+	RT				rmat;
+
+}Matrix;
+
+
+
+
+
+
+
+typedef struct
+{
+	WORD	x, y;
+
+}Xy;
+
+
+
+typedef struct
+{
+	LONG	type;
+	WORD	width,height;
+	WORD	clut[1];
+
+}Image_data;
+
+
+typedef struct
+{
+	UBYTE			name[16];
+	Image_data	image;
+
+}Gfx_header;
+
+typedef struct
+{
+	LONG	status;
+	WORD	tapslot;
+	WORD	tap;
+
+}Missing_pad;
+
+typedef struct
+{
+	WORD	tap;
+	Missing_pad	pad[ TOTAL_PADS ];
+
+}Controller_gone;
+
+typedef struct
+{
+
+	WORD	pad;
+	WORD	debounce;
+	WORD	status;
+	WORD	refresh_status;
+
+}Pad;
+
+typedef struct
+{
+	ControllerPacket pad_buffer[2];
+
+	LONG	current_setup;
+	LONG	original_setup;
+ 	LONG	eh;
+	Pad	pad[8];
+
+	Pad	all;
+	void	(*task)(void);
+
+
+}Player_input;
+
+typedef struct
+{
+	WORD	r;
+	WORD	g;
+	WORD	b;
+	
+}Rgb;
+
+
+typedef struct
+{
+
+	LONG	offset;
+	LONG	size;
+
+}Bag_file;
+
+
+
+typedef struct
+{
+	WORD	x,y;
+
+}Screen_coord;
+
+
+
+typedef struct
+{
+	VECTOR	pos;
+	VECTOR	target;
+	SVECTOR	i,j,k;
+	LONG		control;
+} Camera;
+
+
+
+/******************************************************/
+/*	linked list														*/
+/******************************************************/
+typedef struct Link
+{
+	struct Link	*next;	
+	struct Link	*next_active;	
+	struct Link	*prev_active;	
+
+}Link;
+
+typedef struct
+{
+	Link *base_chain;
+	Link *free_chain;
+	Link *active_chain;
+	LONG size;
+	LONG many;
+
+}Chain;
+
+/******************************************************/
+/*	primitive 														*/
+/******************************************************/
+typedef union
+{
+	POLY_GT4	gt4;
+	POLY_G4	g4;
+	LINE_F4	lf4;
+	LINE_G4	lg4;
+	POLY_F4	f4;
+
+}Quad_prim;
+
+typedef union
+{
+	POLY_GT3	gt3;
+	POLY_G3	g3;
+	LINE_F3	lf3;
+	LINE_G3	lg3;
+	POLY_F3	f3;
+
+}Tri_prim;
+
+typedef struct Quad
+{
+	Link			link;
+	Quad_prim	prim[2];				// biggest quad primitive
+}Quad;
+
+typedef struct Tri
+{
+	Link			link;
+	Tri_prim		prim[2];				// biggest tri primitive
+}Tri;
+
+typedef union
+{
+	Tri	*tri_ptr;
+	Quad	*quad_ptr;
+
+}Prim_ptr;
+
+typedef struct
+{
+	WORD	u,v;
+}Uv;
+
+typedef struct
+{
+	UBYTE	u,v;
+}Buv;
+
+typedef struct
+{
+	WORD		v1,v2,v3,v4;
+//	SVECTOR	n0,n1,n2;
+//	CVECTOR	c0,c1,c2,c3;
+
+}G4_prim;
+
+typedef struct
+{
+	WORD		v1,v2,v3, pad;
+	SVECTOR	n0,n1,n2;
+//	CVECTOR	c0,c1,c2;
+
+}G3_prim;
+
+
+typedef struct
+{
+	WORD		v1,v2,v3,v4;
+//	CVECTOR	c0,c1,c2,c3;
+	Uv		  	uv0,uv1,uv2,uv3;
+	SVECTOR	n0,n1,n2,n3;
+}GT4_prim;
+
+typedef struct
+{
+	SVECTOR	a,b,c;
+
+}UVMat;
+
+typedef struct
+{
+	WORD		v1,v2,v3;
+	Buv 	  	uv0,uv1,uv2;
+	SVECTOR	n0,n1,n2;
+
+}GT3_prim;
+
+typedef struct
+{
+	WORD		v1,v2,v3;
+	Buv 	  	uv0,uv1,uv2;
+	UVMat		bm0,bm1,bm2;
+
+}GT3B_prim;
+
+typedef struct
+{
+	WORD		v1,v2,v3;
+	Buv 	  	uv0,uv1,uv2;
+	UVMat		bm0,bm1,bm2;
+
+}GT3RB_prim;
+
+
+typedef struct
+{
+	SVECTOR	n0,n1,n2;
+	WORD		v1,v2,v3, pad;
+
+}GT3C_prim;
+
+typedef struct
+{
+	SVECTOR	n0,n1,n2;
+	WORD		v1,v2,v3,pad;
+
+}GT3G_prim;
+
+typedef struct
+{
+	SVECTOR	v;
+//	CVECTOR	c;
+//	SVECTOR	n;
+// 	Xy			t;
+}Point;
+
+typedef struct	test_model
+{
+	UBYTE		name[16];
+	WORD		vertex_count;
+	WORD		g4_count;
+	WORD		g3_count;
+	WORD		gt4_count;
+	WORD		gt3_count;
+	WORD		gt3b_count;
+	WORD		gt3r_count;
+	WORD		gt3br_count;
+	WORD		gt3c_count;
+	WORD		gt3g_count;
+	WORD		gt3rb_count;
+	WORD		gt3pad_count;
+
+	SVECTOR	bound[9];
+
+	Point			*point_list;
+	G4_prim		*g4_prim;
+	G3_prim		*g3_prim;
+	GT4_prim		*gt4_prim;
+	GT3_prim		*gt3_prim;
+	GT3B_prim	*gt3b_prim;
+	GT3_prim		*gt3r_prim;
+	GT3C_prim	*gt3c_prim;
+	GT3G_prim 	*gt3g_prim;
+	GT3RB_prim 	*gt3rb_prim;
+
+//	SVECTOR	vlist[1];
+	Point		vlist[1];
+}Model_info;
+
+
+
+
+typedef struct
+{
+	Model_info *detail;
+
+}Lod;
+
+typedef struct
+{
+	SVECTOR		i,j,k;
+
+}Axis;
+
+typedef union
+{
+	G4_prim		*g4_prim;
+	G3_prim		*g3_prim;
+	GT4_prim		*gt4_prim;
+	GT3_prim		*gt3_prim;
+	GT3B_prim  	*gt3b_prim;
+	GT3_prim		*gt3r_prim;
+	GT3C_prim  	*gt3c_prim;
+	GT3G_prim 	*gt3g_prim;
+	GT3RB_prim 	*gt3rb_prim;
+
+}Mprim;
+
+typedef struct
+{
+	WORD		setup;
+	WORD		count;
+	Mprim		mprim;
+
+}Pinfo;
+
+
+typedef struct
+{
+
+	Model_info 	*model_info;
+	WORD			set;
+	WORD			vertex_count;
+	WORD			g4_setup;
+	WORD			g4_count;
+	WORD			gt3r_setup;
+	WORD			gt3c_setup;
+	WORD			gt3g_setup;
+	WORD			gt3rb_setup;
+	WORD			gt3pad_setup;
+	WORD			pad;
+
+	Pinfo			g3_pinfo;
+	Pinfo			gt3b_pinfo;
+
+	Point			*point_list;
+	G4_prim		*g4_prim;
+	GT4_prim		*gt4_prim;
+	GT3_prim		*gt3_prim;
+	GT3_prim		*gt3r_prim;
+	GT3C_prim  	*gt3c_prim;
+	GT3G_prim 	*gt3g_prim;
+	GT3RB_prim 	*gt3rb_prim;
+
+//	Quad			*quad_g4;
+//	Quad			*quad_last_g4;
+//	Quad			*quad_gt4;
+//	Quad			*quad_last_gt4;
+//	Quad			*quad_lg4;
+//	Quad			*quad_last_lg4;
+
+	Tri			*tri_g3;
+	Tri			*tri_last_g3;
+
+	Tri			*tri_gt3b;
+	Tri			*tri_last_gt3b;
+	Tri			*tri_gt3ba;
+	Tri			*tri_last_gt3ba;
+	Tri			*tri_gt3bs;
+	Tri			*tri_last_gt3bs;
+
+}Model_stack;
+
+typedef struct
+{
+	VECTOR	velocity;	
+	VECTOR	position;
+	VECTOR	offset;
+	VECTOR	last_bottom_offset;
+	VECTOR	last_top_offset;
+	LONG		last_springforce;
+	LONG		springforce;
+	LONG		compression;
+	Spring	*spring;
+
+
+}Wheel;
+
+typedef struct
+{
+	struct Object*	wheels[4];
+	LONG	steer;
+
+}Chassis;
+
+typedef union
+{
+	Chassis	chassis;
+	Wheel	wheel;
+
+}Object_pocket;
+
+
+typedef struct Object
+{
+	Link			link;
+	LONG			control;
+	LONG			z;
+	LONG			distance_from_camera;
+	WORD			current_lod;
+	WORD			last_lod;
+
+	struct Object	*pop;
+	void 	 		(*task)( struct Object * );	
+	Model_info	**lod;
+
+	struct Object *children[4];
+	struct Object *obj_ptr;
+	LONG				mass;
+	VECTOR			moment;
+	RT					axis;
+	SVECTOR			rotvector;
+	VECTOR			angular_velocity;
+	VECTOR			acceleration;
+	VECTOR			velocity;
+	LONG				sliding;
+	LONG				static_friction;
+	LONG				kinetic_friction;
+	Object_pocket	pocket;
+
+	Model_stack		model_stack;
+
+
+	LONG			timer;
+
+}Object;
+
+
+
+typedef struct
+{
+	Model_info	**details;
+	void			(*task)(Object *obj );
+
+}Object_def;
+
+
+typedef struct
+{
+//	CVECTOR	c;
+	WORD		x,y;
+	LONG		z;
+//	Xy			t;
+//	LONG		z;
+}Xformed;
+
+typedef struct
+{
+	SVECTOR	coord;
+	SVECTOR	colour;
+
+}Omnilight;
+
+
+typedef struct
+{
+	LONG				control;
+	WORD				x,y,h,width;
+	CVECTOR			bar_col;
+	CVECTOR			back_col;
+	LONG				usage;
+
+	LONG				max;
+	LONG				val;
+	POLY_F4			poly[2];
+	POLY_F4			outline[2];
+
+
+}Timebar;
+
+
+
+typedef struct
+{
+	
+	LONG				flag;
+	LONG				frames_per_update;
+	void 	 			(*vbl)( void );	
+	void 	 			(*drawback)( void );	
+
+	LONG				vstart;
+	LONG				vend;
+	LONG				dstart;
+	LONG				dend;
+
+	LONG				last_update;
+	volatile	LONG	frame_counter, vsync_counter,
+						calibrate, calibrate_base;
+
+	volatile	LONG	draw_counter;
+
+
+}Time_pocket;
+
+
+typedef struct
+{
+	WORD	width;
+	WORD	height;
+	WORD	size;
+	LONG	max, min;
+	LONG	x_offset, z_offset;
+	WORD	*grid;
+	Quad	*first, *last;
+
+}Level;
+
+typedef struct
+{
+	UBYTE	string[64];
+	LONG	timer;
+	LONG	control;
+
+}Event;
+
+
+
+
+typedef struct
+{
+	WORD		r,g,b;
+	WORD		speed;
+	CVECTOR	col;
+}Wave;
+
+typedef struct
+{
+	LONG	*image_vlc;			// bitstream encoded image
+	WORD	colour_depth;		// 16 or 24
+	WORD	x,y;
+	WORD	image_width, image_height;
+	WORD	screen_xres, screen_yres;
+
+}Bs_image;
+
+typedef struct
+{
+	WORD	tpage;
+	WORD	bump_tpage, bump_tpage_a, bump_tpage_s;
+	WORD	ref_tpage, ref_tpage_a, ref_tpage_s, ref_tpage_g, ref_tpage_a2;
+	WORD	clut,bump_clut,ref_clut;
+
+}Gfx_vram;
+
+
+
+
+
+#define	FRAME_RATE	1
+#define	ASPECT	15								// aspec ratio * 10 
+
+
+
+void rob_move_camera( void );
+void point_camera_by_vector(void);
+void point_cam_z( void );
+WORD fade( WORD *c, WORD speed, WORD max, WORD min );
+void rob_make_random_number( void );
+void process_waves( void );
+void init_waves( void );
+void control( void );
+void reset_free_mem( void );
+void vram_peek( void );
+//void setup_screens( Db *db );
+void wait_vbl( void );
+void vblank( void );
+
+void task_planet( Object *obj );
+void zero( UBYTE *s, LONG many );
+
+
+void get_to_v( VECTOR *t, VECTOR *s, LONG shift, LONG speed );
+void get_to_sv( SVECTOR *t, SVECTOR *s, LONG shift, WORD speed );
+LONG	minmax( LONG v, LONG min, LONG max );
+
+
+void rv_axis_set( WORD	x, WORD y, WORD z, RT *m1 );
+void identity( RT *m );
+
+void render( Object *obj, MATRIX *local );
+void draw_objects( void );
+void draw_obj( Object *obj, MATRIX *real, MATRIX *light_mat );
+
+void create_obj_axis_yz( Object *obj, MATRIX *dest );
+void create_obj_axis( Object *obj, MATRIX *dest );
+void draw_shadow_gt3( Object *obj, Xformed *xlist );
+WORD xform_shadow_vertex( Object *obj, MATRIX *m, Xformed *x1 );
+LONG	distance( VECTOR *p1, MATRIX *p2 );
+void alloc_prim( void );
+Object	*spawn_object( Object_def *def, WORD set );
+void do_test( void );
+WORD alloc_g4( Object *obj );
+void draw_g4( Object * );
+void install_vram_image( void );
+WORD alloc_gt4( Object *obj );
+void draw_gt4( Object *obj );
+WORD alloc_gt3( Object *obj );
+void boxtask( Object *obj );
+void testup( Object *obj );
+LONG	fastdst( LONG xdist, LONG zdist );
+void boxtask2( Object *obj );
+Object *get_object( void );
+
+
+WORD dealloc_gt3( Object *obj );
+void bound( Object *obj );
+
+
+WORD bung_image( Gfx_header *g, RECT *r );
+WORD bung_clut( Gfx_header *g, RECT *r );
+
+
+void initialise_model( Object_def *def );
+void initialise_model_info( Model_info *mi, LONG detail );
+WORD xform_vertex( Object *obj, MATRIX *m, Xformed *x1 );
+
+
+void bump_mat( SVECTOR *magic, UVMat *bm, SVECTOR *v );
+void show_matrix( MATRIX *m );
+
+
+
+WORD alloc_gt3b( Object *obj );
+WORD dealloc_gt3b( Object *obj );
+void draw_set_gt3b( Object *obj, Xformed *xlist );
+void draw_gt3b( Object *obj, Xformed *xlist );
+
+void draw_set_gt3( Object *obj, Xformed *xlist );
+void draw_gt3( Object *obj, Xformed *xlist );
+
+WORD alloc_gt3r( Object *obj );
+WORD dealloc_gt3r( Object *obj );
+void draw_set_gt3r( Object *obj, Xformed *xlist );
+void draw_gt3r( Object *obj, Xformed *xlist );
+void getuv3( SVECTOR *n, POLY_GT3 *gt3 );
+
+WORD alloc_gt3c( Object *obj );
+WORD dealloc_gt3c( Object *obj );
+void draw_set_gt3c( Object *obj, Xformed *xlist );
+void draw_gt3c( Object *obj, Xformed *xlist);
+
+
+WORD alloc_gt3g( Object *obj );
+WORD dealloc_gt3g( Object *obj );
+void draw_set_gt3g( Object *obj, Xformed *xlist );
+void draw_gt3g( Object *obj, Xformed *xlist );
+
+
+WORD alloc_gt3rb( Object *obj );
+WORD dealloc_gt3rb( Object *obj );
+void getuv3b( GT3RB_prim *p, POLY_GT3 *gt3 );
+void draw_gt3rb( Object *obj, Xformed *xlist );
+void draw_set_gt3rb( Object *obj, Xformed *xlist );
+
+void draw_set_g3( Object *obj, Xformed *xlist );
+void draw_g3( Object *obj, Xformed *xlist );
+
+WORD dealloc_g3( Object *obj );
+WORD alloc_g3( Object *obj );
+
+LONG	asf( LONG *a );
+
+void cap( WORD *v, WORD top, WORD bot );
+void install_gfx( Gfx_header *gfx, Gfx_header *bump, WORD no );
+
+void process_objects( void );
+Object *get_free_object( Object *obj );
+void dmode_line( Object *obj );
+void dmode_line_gt4( Object *obj );
+void dmode_line_gt3( Object *obj );
+void initialise_objects( void );
+void check_lod( Object *obj );
+void language_select_exec( void );
+
+
+
+
+
+

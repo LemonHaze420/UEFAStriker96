@@ -1,0 +1,12 @@
+void vblank( void );
+void init_timebar( Timebar *t, LONG max );
+void draw_timebar( Timebar *tb );
+void draw_cpu_timebar( void );
+void mark_gpu_timebar( void );
+void start_gpu_timer( void );	
+void stop_gpu_timer( void );
+void draw_callback( void );
+void draw_cpu_timebar( void );
+void set_tbar( WORD x, WORD y, WORD height, POLY_F4 *prim, UBYTE r, UBYTE g, UBYTE b );
+void draw_callback( void );
+

@@ -1,0 +1,104 @@
+
+updated 3/4/98
+
+Head
+
+This consists of 3 components
+
+1. Head
+size = 64x64 pixels
+Drawn in cols 0-127 out of 256
+5 groups and 10 styles per group ( 50 in total )
+Total of 5 palettes ( 1 for each color group eg black, brown, yellow etc )
+
+2. Head hair
+size = 64x64 pixels
+Drawn in cols 128-255
+Total of 16 textures.
+Total of 16 palettes
+
+3. Face hair
+size = 64x64 pixels
+Drawn in cols 128-255
+Total of 20 textures ( approx )
+Should use head hair palette above.
+
+
+
+Thigh texture
+size = 32x32 pixels
+Drawn in colors 0-63
+
+
+Arm texture
+size = 44x64
+Drawn in cols 0-63
+Total of 1 texture
+Total of 5 palettes.
+
+
+
+Shirt 
+This consists of 4 components
+
+1. Shirt front texture. 16 in total
+   size = 40x64
+   drawn in cols 0-191 out of 256 colors
+
+2. Shirt back texture. 16 in total
+   size = 32x64
+   drawn in cols 0-191
+
+3. Shirt sleeve. 16 in total
+   size = 32x32
+   drawn in cols 0-191
+
+4. Shirt numbers. Should go 1 to 16
+   size = 32x32
+   drawn in cols 192-255
+
+
+Total of 10 palettes.
+Components 1 - 3 should share these palettes.
+Component 4 should have its own palette
+Shirt styles 1-12 are for normal player.
+Shirt styles 13-16 are for goalkeeper.
+
+
+Goalkeeper sleeves
+These replace the skin forearm of normal player
+and should match the shirt upper sleeve
+size = 44x64
+Drawn in cols 0-63
+Total of 4 textures
+Total of 10 palettes ( similar palette ranges as shirt )
+
+
+
+
+Short textures
+size = 48x32
+Drawn in cols 0-63
+Total of 12 textures
+Total of 10 palettes
+This should be one side of the short only.
+
+
+
+Sock textures
+size = 32x32
+Drawn in cols 0-63
+Total of 4 textures
+Total of 10 palettes
+
+
+Note-
+There are two player meshes.
+One for a normal player and one for the goalkeeper.
+
+
+Boots
+size = 32x32
+Drawn in cols 0-15
+
+

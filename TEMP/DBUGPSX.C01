@@ -1,0 +1,118 @@
+#version
+ 4.95
+#readram0
+ 00000000  007FFFFF
+ 80000000  807FFFFF
+ A0000000  A07FFFFF
+ BFC00000  BFC0FFFF
+ 1F800000  1F800400
+#writeram0
+ 00000000  007FFFFF 
+ 80000000  807FFFFF 
+ A0000000  A07FFFFF 
+#update
+ FF 0008
+#video
+ 55 84 3C
+#label level
+ 02 00 00
+#colour attributes
+ 17 20 60 40 1F 2F 6F 4F 3E B0 4F 5E 0C 70 C0 87 8E 8E F0 90 4F 87 7C 0E 0A 70
+#mono attributes
+ 07 07 07 07 0F 0F 0F 0F 70 70 07 70 0F 70 01 07 0F 0F 70 0F 07 07 70 07 07 70
+#default tabs
+ 68K 0F 17 28 30 00 00 00 00
+ 658 0F 17 28 30 00 00 00 00
+ Z80 0F 17 28 30 00 00 00 00
+ C   04 00 00 00 00 00 00 00
+#expression C/ASM flags
+ 00 FF 00 00 00
+#window
+ 07 00 00 00
+ 00 01 42 0A 16 02
+ 00000000
+#window
+ 85 00 40 00
+ 00 0A 41 3A 0A 18
+ 000001EB
+#file
+C:\SHELL\FRONT\SRC\MODEL.C
+#tabs
+ 04 00 00 00 00 00 00 00
+
+#window
+ 07 00 00 00
+ 41 0A 83 22 4B 0B
+ 00000000
+#window
+ 03 01 00 00
+ 42 01 83 0A 4C 02
+ 801FFD68
+#window
+ 04 00 00 00
+ 41 22 83 3A 4B 26
+ 00000000
+#watches
+ 80 00 08
+ obj_matrix -> m[0][0]
+ 80 00 08
+ obj_matrix -> m[1][0]
+ 80 00 08
+ obj_matrix -> m[2][0]
+ 80 00 08
+ obj_matrix -> m[0][1]
+ 80 00 08
+ obj_matrix -> m[1][1]
+ 80 00 08
+ obj_matrix -> m[2][1]
+ 80 00 08
+ obj_matrix -> m[0][2]
+ 80 00 08
+ obj_matrix -> m[1][2]
+ 80 00 08
+ obj_matrix -> m[2][2]
+ 80 00 08
+ tr_mat.m[0][0]
+ 80 00 08
+ tr_mat.m[1][0]
+ 80 00 08
+ tr_mat.m[2][0]
+ 80 00 08
+ tr_mat.m[0][1]
+ 80 00 08
+ tr_mat.m[1][1]
+ 80 00 08
+ tr_mat.m[2][1]
+ 80 00 08
+ tr_mat.m[0][2]
+ 80 00 08
+ tr_mat.m[1][2]
+ 80 00 08
+ tr_mat.m[2][2]
+
+#history
+ 02 main.c
+ 02 main.c
+ 02 test.c
+ 02 test.c
+ 02 main.c
+ 02 test.c
+ 02 test.c
+ 02 main.c
+ 0A rl_draw_model_g3s
+ 0A rl_draw_model_g3s
+ 0A setup_model_dummy_ft3s
+ 0A setup_model_dummy_ft3s
+ 0A setup_model_header
+ 0A setup_model_objects
+ 0A 80058f06
+ 0A setup_model_objects
+ 0C obj_mat
+ 12 mdt_addr
+ 12 mdt_addr
+ 12 mdt_addr
+ 12 mdt_addr
+ 12 mdt_addr
+ 12 mdt_addr
+ 12 mdt_addr
+ 12 mdt_addr

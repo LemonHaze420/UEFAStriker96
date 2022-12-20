@@ -1,0 +1,74 @@
+#version
+ 4.113
+#readram0
+ 00000000  007FFFFF
+ 80000000  807FFFFF
+ A0000000  A07FFFFF
+ BFC00000  BFC0FFFF
+ 1F800000  1F800400
+#writeram0
+ 00000000  007FFFFF 
+ 80000000  807FFFFF 
+ A0000000  A07FFFFF 
+#update
+ FF 0008
+#video
+ 03 84 3C
+#label level
+ 02 00 00
+#colour attributes
+ 17 20 60 40 1F 2F 6F 4F 3E B0 4F 5E 0C 70 C0 87 8E 8E F0 90 4F 87 7C 0E 0A 70
+#mono attributes
+ 07 07 07 07 0F 0F 0F 0F 70 70 07 70 0F 70 01 07 0F 0F 70 0F 07 07 70 07 07 70
+#default tabs
+ 68K 0F 17 28 30 00 00 00 00
+ 658 0F 17 28 30 00 00 00 00
+ Z80 0F 17 28 30 00 00 00 00
+ C   04 00 00 00 00 00 00 00
+#expression C/ASM flags
+ 00 FF 00 00 00
+#window
+ 07 00 00 00
+ 00 01 42 0A 16 02
+ 00000000
+#window
+ 85 00 40 00
+ 00 0A 41 3A 0A 18
+ 000001EB
+#history
+ 02 frontend.c
+ 02 main.c
+ 02 frontend.c
+ 02 main.c
+ 02 frontend.c
+ 02 main.c
+ 02 main.c
+ 02 frontend.c
+ 07 2
+ 07 1
+ 07 4
+ 07 1
+ 07 2
+ 07 1
+ 07 0
+ 07 5
+ 0A init_language_select
+ 0A run_frontend
+ 0A init_shell
+ 0A run_frontend
+ 0A init_language_select
+ 0A init_language_select
+ 0A render
+ 0A 8015b82c
+ 0B initialise_objects
+ 0B friendly_thread
+ 0B shell_type_word_list
+ 0F memcard.c
+ 12 config->language
+ 12 config
+ 12 config->langauge
+ 12 shell
+ 12 frame_update
+ 12 cdb
+ 12 current_ot
+ 12 free_mem_ptr

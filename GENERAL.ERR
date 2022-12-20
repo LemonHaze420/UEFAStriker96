@@ -1,0 +1,33 @@
+
+D:\striker\src>call batch\m.bat
+ccpsx /i -c -W -O2 -comments-c++ -mgpopt -DVER=1 -DNTSC=NO general.c -o object\\general.obj
+GENERAL.C: In function `allocate_mem':
+GENERAL.C:406: invalid operands to binary /
+GENERAL.C:407: invalid operands to binary %
+GENERAL.C:392: warning: `addr_k' might be used uninitialized in this function
+GENERAL.C:392: warning: `addr_rem' might be used uninitialized in this function
+Error(E42): Last command making (object\\general.obj) returned a bad status
+Error(E02): Make execution terminated
+        1 file(s) copied
+
+D:\striker\src>
+
+D:\striker\src>call batch\gg.bat
+
+D:\striker\src>
+D:\striker\src>
+D:\striker\src>
+
+D:\striker\src>
+D:\striker\src>rem resetps 1 >c:\batch\poo
+
+D:\striker\src>rem call gopatch
+
+D:\striker\src>rem call wmake /h /z
+
+D:\striker\src>rem delay 4
+
+D:\striker\src>rem run /w8 object\main.cpe >c:\batch\poo
+
+D:\striker\src>
+

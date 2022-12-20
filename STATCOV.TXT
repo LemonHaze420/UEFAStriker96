@@ -1,0 +1,185 @@
+Static coverage report
+----------------------
+Note: uncalled functions were NOT stripped from the image
+Note: data-ref-only functions were not stripped from the image
+
+Functions never called at all:
+------------------------------
+    72: object\cdaudio.obj: function stop_xa_audio
+    32: object\cmplogic.obj: function set_league_draw_array
+   164: object\memcard.obj: function make_mc_checksum
+   292: object\hwcard.obj: function convert_jis_to_ascii
+   184: object\hwcard.obj: function convert_string_from_jis_to_ascii
+    64: object\hwcard.obj: function init_memcard
+   972: object\hwcard.obj: function download_mc_icons
+   228: object\hwcard.obj: function check_lt_card_present
+   212: object\config.obj: function init_config_io
+    52: object\config.obj: function update_config_io
+    48: object\config.obj: function kill_config_io
+    92: object\shell.obj: function exit_shell_buttons
+   132: object\shell.obj: function run_shell
+   116: object\shell.obj: function restore_current_item
+    32: object\teamedit.obj: function do_bloke_shadow
+    60: object\gadget.obj: function kill_gadget
+    92: object\gadget.obj: function get_gadget
+   144: object\font.obj: function unspawn_text_string
+   220: object\font.obj: function unspawn_text_group
+    84: object\font.obj: function get_group_sprite
+   160: object\render.obj: function download_texture2
+   380: object\render.obj: function move_texture
+   328: object\render.obj: function move_clut
+   404: object\utils.obj: function adjust_vector
+   428: object\utils.obj: function adjust_svector
+   300: object\utils.obj: function fntprint_mat
+    92: object\utils.obj: function start_vc
+   172: object\utils.obj: function show_vc
+  1160: object\utils.obj: function debug_crosshair
+   256: object\utils.obj: function show_message
+    84: object\general.obj: function read_free_addr
+    84: object\general.obj: function get_heap_size
+   104: object\main.obj: function movie_exit_update
+   188: object\main.obj: function show_start_movies
+   248: object\hardware.obj: function set_defdispdraw
+   148: object\hardware.obj: function enable_display
+    96: object\hardware.obj: function disable_display
+   408: object\hardware.obj: function show_loadscn
+    72: object\io.obj: function read_cd_data
+    56: object\io.obj: function get_cd_data
+  1280: object\sprite.obj: function draw_gt4_dummy_texture
+  1784: object\sprite.obj: function add_backdropx
+   592: object\sprite.obj: function update_backdropx
+    52: object\sprite.obj: function kill_backdrop
+   676: object\sprite.obj: function add_ingame_backdrop
+   132: object\sprite.obj: function update_ingame_backdrop
+    52: object\sprite.obj: function kill_ingame_backdrop
+   736: object\sprite.obj: function draw_simple_poly
+    92: object\sprite.obj: function spawn_sprite_at_this_slot
+   628: object\sound.obj: function sfxMod
+   196: object\sound.obj: function sfxHandleOfPartialName
+   720: object\sound.obj: function sfxEchoOn
+   152: object\sound.obj: function sfxKeyOff
+   176: object\sound.obj: function sfxAllVoicesOff
+  1120: object\sound.obj: function sfxProcessEchos
+   244: object\sound.obj: function Sound_FadeOn
+   248: object\sound.obj: function Sound_FadeOff
+   152: object\sound.obj: function sfxFadeAllSoundOff
+   152: object\sound.obj: function sfxFadeAllSoundOn
+   184: object\sound.obj: function sfxSpuCleanUp
+    96: object\sound.obj: function sfxRestart
+    64: object\sound.obj: function sfxShutUp
+    72: object\sound.obj: function sfxSetMasterVolume
+    72: object\sound.obj: function sfxSetMusicVolume
+    48: object\sound.obj: function sfxSetSfxVolume
+   208: object\mem.obj: function compact_otr
+    14: object\mem.obj: function time_and_date
+    64: c:\psx\lib.43\lib\libgpu.lib(FONT.obj): function SetDumpFnt
+   108: c:\psx\lib.43\lib\libcd.lib(SYS.obj): function CdReset
+    20: c:\psx\lib.43\lib\libcd.lib(SYS.obj): function CdSetDebug
+    52: c:\psx\lib.43\lib\libcd.lib(SYS.obj): function CdComstr
+    52: c:\psx\lib.43\lib\libcd.lib(SYS.obj): function CdIntstr
+   392: c:\psx\lib.43\lib\libmcrd.lib(LIBMCRD.obj): function MemCardOpen
+    68: c:\psx\lib.43\lib\libmcrd.lib(LIBMCRD.obj): function MemCardClose
+   164: c:\psx\lib.43\lib\libgpu.lib(SYS.obj): function SetGraphQueue
+    16: c:\psx\lib.43\lib\libgpu.lib(SYS.obj): function GetGraphDebug
+   152: c:\psx\lib.43\lib\libgpu.lib(SYS.obj): function ClearImage2
+   200: c:\psx\lib.43\lib\libgpu.lib(SYS.obj): function ClearOTag
+    52: c:\psx\lib.43\lib\libgpu.lib(SYS.obj): function GetDrawEnv
+    52: c:\psx\lib.43\lib\libgpu.lib(SYS.obj): function GetDispEnv
+    48: c:\psx\lib.43\lib\libgpu.lib(SYS.obj): function GetODE
+    64: c:\psx\lib.43\lib\libgpu.lib(SYS.obj): function SetDrawOffset
+   236: c:\psx\lib.43\lib\libgpu.lib(SYS.obj): function LoadImage2
+   236: c:\psx\lib.43\lib\libgpu.lib(SYS.obj): function StoreImage2
+   324: c:\psx\lib.43\lib\libgpu.lib(SYS.obj): function MoveImage2
+   252: c:\psx\lib.43\lib\libgpu.lib(SYS.obj): function DrawOTag2
+    32: c:\psx\lib.43\lib\libmcrd.lib(INIT.obj): function MemCardEnd
+    32: c:\psx\lib.43\lib\libtap.lib(TAP.obj): function SendTAP
+    32: c:\psx\lib.43\lib\libtap.lib(TAP.obj): function EnableTAP
+    32: c:\psx\lib.43\lib\libtap.lib(TAP.obj): function DisableTAP
+    48: c:\psx\lib.43\lib\libetc.lib(INTR.obj): function RestartCallback
+    24: c:\psx\lib.43\lib\libetc.lib(INTR.obj): function GetIntrMask
+   776: movie.lib(movie.obj): function play_movie
+   264: movie.lib(movie.obj): function StrDecDCToutCB
+   848: movie.lib(movie.obj): function StrInit
+   100: movie.lib(movie.obj): function StrEnd
+    96: movie.lib(movie.obj): function StrClearVRAM
+   176: movie.lib(movie.obj): function StrKickCD
+   320: movie.lib(movie.obj): function StrGetNextFrame
+   148: movie.lib(movie.obj): function StrVLCFrame
+   204: movie.lib(movie.obj): function StrDrawDecodeSync
+    88: movie.lib(movie.obj): function StrFadeOutVol
+   104: movie.lib(movie.obj): function GetDCToutSize
+    48: movie.lib(movie.obj): function ScalePPW
+    32: movie.lib(movie.obj): function GetDCT_MODE
+   212: movie.lib(movie.obj): function AllocMem
+   128: c:\psx\lib.43\lib\libspu.lib(S_M_F.obj): function SpuFree
+    76: c:\psx\lib.43\lib\libcd.lib(BIOS.obj): function CD_initintr
+   416: c:\psx\lib.43\lib\libcd.lib(CDREAD.obj): function CdReadBreak
+    20: c:\psx\lib.43\lib\libcd.lib(CDREAD.obj): function CdReadCallback
+    28: c:\psx\lib.43\lib\libcd.lib(CDREAD.obj): function CdReadMode
+    48: c:\psx\lib.43\lib\libmcrd.lib(BIOS.obj): function _card_open
+    32: c:\psx\lib.43\lib\libmcrd.lib(BIOS.obj): function _card_close
+    40: c:\psx\lib.43\lib\libcard.lib(INIT.obj): function StopCARD
+   240: c:\psx\lib.43\lib\libpress.lib(BUILD.obj): function DecDCTvlcBuild
+  2800: c:\psx\lib.43\lib\libcd.lib(C_011.obj): function StCdInterrupt
+    52: c:\psx\lib.43\lib\libpress.lib(LIBPRESS.obj): function DecDCTReset
+   140: c:\psx\lib.43\lib\libpress.lib(LIBPRESS.obj): function DecDCTGetEnv
+   152: c:\psx\lib.43\lib\libpress.lib(LIBPRESS.obj): function DecDCTPutEnv
+   124: c:\psx\lib.43\lib\libpress.lib(LIBPRESS.obj): function DecDCTin
+    32: c:\psx\lib.43\lib\libpress.lib(LIBPRESS.obj): function DecDCTout
+    60: c:\psx\lib.43\lib\libpress.lib(LIBPRESS.obj): function DecDCTinSync
+    60: c:\psx\lib.43\lib\libpress.lib(LIBPRESS.obj): function DecDCToutSync
+    36: c:\psx\lib.43\lib\libpress.lib(LIBPRESS.obj): function DecDCTinCallback
+  1008: c:\psx\lib.43\lib\libpress.lib(LIBPRESS.obj): function DecDCToutCallback
+   128: c:\psx\lib.43\lib\libcd.lib(C_003.obj): function StUnSetRing
+   176: c:\psx\lib.43\lib\libcd.lib(CDREAD2.obj): function CdRead2
+    48: c:\psx\lib.43\lib\libpress.lib(VLC_C.obj): function DecDCTvlcSize2
+   848: c:\psx\lib.43\lib\libpress.lib(VLC_C.obj): function DecDCTvlc2
+   144: c:\psx\lib.43\lib\libcd.lib(C_005.obj): function StSetStream
+   224: c:\psx\lib.43\lib\libsnd.lib(SSGSV.obj): function SsGetSerialVol
+    48: c:\psx\lib.43\lib\libcd.lib(CDROM.obj): function StSetRing
+   272: c:\psx\lib.43\lib\libsnd.lib(SSSV.obj): function SsSetSerialVol
+   192: c:\psx\lib.43\lib\libcd.lib(C_009.obj): function StGetNext
+    48: c:\psx\lib.43\lib\libpress.lib(VLC.obj): function DecDCTvlcSize
+   848: c:\psx\lib.43\lib\libpress.lib(VLC.obj): function DecDCTvlc
+   176: c:\psx\lib.43\lib\libcd.lib(C_007.obj): function StFreeRing
+   168: c:\psx\lib.43\lib\libspu.lib(SPU.obj): function _spu_Fr_
+   100: c:\psx\lib.43\lib\libspu.lib(SPU.obj): function _spu_Fr
+    60: c:\psx\lib.43\lib\libspu.lib(SPU.obj): function _spu_FgetRXXa
+   128: c:\psx\lib.43\lib\libspu.lib(S_M_UTIL.obj): function _SpuIsInAllocateArea
+   304: c:\psx\lib.43\lib\libspu.lib(S_N2P.obj): function _spu_pitch2note
+    12: c:\psx\lib.43\lib\libapi.lib(PAD.obj): function SetInitPadFlag
+   144: c:\psx\lib.43\lib\libapi.lib(PAD.obj): function PAD_init
+   144: c:\psx\lib.43\lib\libapi.lib(PAD.obj): function InitPAD
+    48: c:\psx\lib.43\lib\libapi.lib(PAD.obj): function StartPAD
+   404: c:\psx\lib.43\lib\libapi.lib(PAD.obj): function StopPAD
+    16: c:\psx\lib.43\lib\libcard.lib(A76.obj): function StopCARD2
+   128: c:\psx\lib.43\lib\libcard.lib(END.obj): function _ExitCard
+    64: c:\psx\lib.43\lib\libcd.lib(C_008.obj): function init_ring_status
+   140: c:\psx\lib.43\lib\libcd.lib(C_004.obj): function data_ready_callback
+   100: c:\psx\lib.43\lib\libcd.lib(C_004.obj): function StGetBackloc
+    20: c:\psx\lib.43\lib\libds.lib(DSCB.obj): function DsSyncCallback
+    20: c:\psx\lib.43\lib\libds.lib(DSCB.obj): function DsReadyCallback
+    20: c:\psx\lib.43\lib\libds.lib(DSCB.obj): function DsStartCallback
+    36: c:\psx\lib.43\lib\libds.lib(DSCB.obj): function DsDataCallback
+    32: c:\psx\lib.43\lib\libcd.lib(C_010.obj): function StSetMask
+   784: c:\psx\lib.43\lib\libspu.lib(S_GCA.obj): function SpuGetCommonAttr
+    96: c:\psx\lib.43\lib\libcd.lib(C_002.obj): function StClearRing
+   112: c:\psx\lib.43\lib\libapi.lib(CHCLRPAD.obj): function _remove_ChgclrPAD
+    20: c:\psx\lib.43\lib\libapi.lib(PATCH.obj): function EnablePAD
+    20: c:\psx\lib.43\lib\libapi.lib(PATCH.obj): function DisablePAD
+   120: c:\psx\lib.43\lib\libapi.lib(PATCH.obj): function _patch_pad
+    16: c:\psx\lib.43\lib\libapi.lib(A21.obj): function PAD_init2
+    16: c:\psx\lib.43\lib\libapi.lib(A18.obj): function InitPAD2
+    16: c:\psx\lib.43\lib\libapi.lib(A19.obj): function StartPAD2
+    16: c:\psx\lib.43\lib\libapi.lib(A20.obj): function StopPAD2
+
+Total uncalled size: 36518
+
+Functions referred to only by data:
+-----------------------------------
+
+Total data-ref-only size: 0
+
+
+Total of totals: 36518
+

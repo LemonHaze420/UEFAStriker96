@@ -1,0 +1,22 @@
+slink (Beta 3.0) new generation linker (c) SN Systems Software Ltd 1998+
+Syntax: slink [options / files] @script,code,syms,map
+Target:	/<target>          (REQUIRED) /psx, /n64, /phoenix, /pda
+Input:	/l /li /lb /ls     add paths for inclib, include, incbin, incsym
+	/e sym=val{;...}   equate sym to val
+Flags:	/c                 case-sensitive linking
+	/we                treat warnings as errors
+	/wl                spot duplicate definitions in libraries
+	/wm                spot duplicate C variable definitions
+	/wo                turn on overlay scoping
+	/st                create static coverage report (statcov.txt)
+	/strip             strip dead code based on static coverage
+	/entry <sym>       specify entry point if not default for target
+Output:
+	/code(file)        set default code output
+	/syms(file)        set default symbol output
+	/map(file)         set default map output
+	/cpemunge          optimal CPE format (slightly slower link)
+	/p                 write main code as binary (default CPE)
+	/v                 enable overlay detection by debugger
+	/z                 fill BSS sections with zeroes
+Lots of other options in documentation...

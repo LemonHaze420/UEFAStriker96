@@ -1,0 +1,3 @@
+#define		SPOT    		0
+#define		SLIDLOOP		1
+#define		SPOTR   		2

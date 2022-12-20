@@ -1,0 +1,20 @@
+void reboot_pad_setup( void );
+void investigate_padout( Controller_gone *padgone );
+void dis_the_pads( void );
+LONG refresh_controller_status( Player_input *i, ControllerPacket *padbuf, WORD pad_offset );
+void debounce_pads( UWORD *key, UWORD *last,UWORD *new );
+void initialise_control_pads( void );
+void read_control_pads( void );
+
+UWORD getpad( UWORD pad_no );
+void read_pads( void );
+WORD count_pads( void );
+
+
+void setup_pads( void );
+void update_pads( void );
+
+
+
+LONG init_controller_hole( Player_input *i, ControllerPacket *padbuf, WORD pad_offset );
+

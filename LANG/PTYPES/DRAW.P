@@ -1,0 +1,86 @@
+void render( Object *obj, MATRIX *local );
+void draw_objects( void );
+void draw_obj( Object *obj, MATRIX *real, MATRIX *light_mat );
+
+void create_obj_axis_yz( Object *obj, MATRIX *dest );
+void create_obj_axis( Object *obj, MATRIX *dest );
+void draw_shadow_gt3( Object *obj, Xformed *xlist );
+WORD xform_shadow_vertex( Object *obj, MATRIX *m, Xformed *x1 );
+LONG	distance( VECTOR *p1, MATRIX *p2 );
+void alloc_prim( void );
+Object	*spawn_object( Object_def *def, WORD set );
+void do_test( void );
+WORD alloc_g4( Object *obj );
+void draw_g4( Object * );
+void install_vram_image( void );
+WORD alloc_gt4( Object *obj );
+void draw_gt4( Object *obj );
+WORD alloc_gt3( Object *obj );
+void boxtask( Object *obj );
+void testup( Object *obj );
+LONG	fastdst( LONG xdist, LONG zdist );
+void boxtask2( Object *obj );
+
+
+WORD dealloc_gt3( Object *obj );
+void bound( Object *obj );
+
+
+WORD bung_image( Gfx_header *g, RECT *r );
+WORD bung_clut( Gfx_header *g, RECT *r );
+
+
+void initialise_model( Object_def *def );
+void initialise_model_info( Model_info *mi, LONG detail );
+WORD xform_vertex( Object *obj, MATRIX *m, Xformed *x1 );
+
+
+void bump_mat( SVECTOR *magic, UVMat *bm, SVECTOR *v );
+void show_matrix( MATRIX *m );
+
+
+
+WORD alloc_gt3b( Object *obj );
+WORD dealloc_gt3b( Object *obj );
+void draw_set_gt3b( Object *obj, Xformed *xlist );
+void draw_gt3b( Object *obj, Xformed *xlist );
+
+void draw_set_gt3( Object *obj, Xformed *xlist );
+void draw_gt3( Object *obj, Xformed *xlist );
+
+WORD alloc_gt3r( Object *obj );
+WORD dealloc_gt3r( Object *obj );
+void draw_set_gt3r( Object *obj, Xformed *xlist );
+void draw_gt3r( Object *obj, Xformed *xlist );
+void getuv3( SVECTOR *n, POLY_GT3 *gt3 );
+
+WORD alloc_gt3c( Object *obj );
+WORD dealloc_gt3c( Object *obj );
+void draw_set_gt3c( Object *obj, Xformed *xlist );
+void draw_gt3c( Object *obj, Xformed *xlist);
+
+
+WORD alloc_gt3g( Object *obj );
+WORD dealloc_gt3g( Object *obj );
+void draw_set_gt3g( Object *obj, Xformed *xlist );
+void draw_gt3g( Object *obj, Xformed *xlist );
+
+
+WORD alloc_gt3rb( Object *obj );
+WORD dealloc_gt3rb( Object *obj );
+void getuv3b( GT3RB_prim *p, POLY_GT3 *gt3 );
+void draw_gt3rb( Object *obj, Xformed *xlist );
+void draw_set_gt3rb( Object *obj, Xformed *xlist );
+
+void draw_set_g3( Object *obj, Xformed *xlist );
+void draw_g3( Object *obj, Xformed *xlist );
+
+WORD dealloc_g3( Object *obj );
+WORD alloc_g3( Object *obj );
+
+LONG	asf( LONG *a );
+
+void cap( WORD *v, WORD top, WORD bot );
+void install_gfx( Gfx_header *gfx, Gfx_header *bump, WORD no );
+
+

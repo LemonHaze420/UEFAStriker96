@@ -1,0 +1,101 @@
+
+
+
+File OPTIONS.C:
+                        ts=add_text_string ( tslot_poses[MAIN_TSLOT]+cnt+TOTAL_OPTIONS , opt_txts[config->language][cnt] , MILFORD_FONT, milford_font_logic, -256, -260+(80*cnt)-(34*2)-44, FONT_RJUST, -2, 0, 0,0 );
+                        add_text_string ( tslot_poses[MAIN_TSLOT]+cnt , text , MILFORD_FONT, milford_font_logic, -256, -260+(80*cnt)-(34*2)-0, FONT_RJUST, cnt, 0, 0,0 );
+                        ts=add_text_string ( tslot_poses[MAIN_TSLOT]+cnt+TOTAL_OPTIONS , opt_txts[config->language][cnt] , MILFORD_FONT, milford_font_logic, -244, -328+(80*cnt)-44, FONT_NORMAL, -2, 0, 0,0 );
+                        add_text_string ( tslot_poses[MAIN_TSLOT]+cnt , text , MILFORD_FONT, milford_font_logic, -244, -328+(80*cnt)-0, FONT_NORMAL, cnt, 0, 0,0 );
+File SHELL.C:
+                        ts=add_text_string ( tslot_poses[LOLLY_TSLOT]+2 , &shell->lolly_text_buffer[0][0] , TITLE_FONT, milford_font_logic, shell->bot_bar_text_x, shell->bot_bar[0]->y.w.hi, FONT_XC, -2, 0, 0,0 );
+                        ts=add_text_string ( tslot_poses[LOLLY_TSLOT]+3 , &shell->lolly_text_buffer[0][0] , TITLE_FONT, milford_font_logic_sub, shell->bot_bar_text_x-6, shell->bot_bar[0]->y.w.hi+12, FONT_XC, -2, 0, 0,0 );
+//      ts = add_text_string ( tslot_poses[LOLLY_TSLOT]+0 , &shell->lolly_text_buffer[1][0] , MILFORD_FONT, milford_font_logic, shell->lolly_text_dest_x[0], -472, FONT_NORMAL, -2, 0, 0,0 );
+                ts=add_text_string ( tslot_poses[LOLLY_TSLOT]+0 , &shell->lolly_text_buffer[1][0] , TITLE_FONT, milford_font_logic, -60, -472, FONT_RJUST, -2, 0, 0,0 );
+                ts=add_text_string ( tslot_poses[LOLLY_TSLOT]+1 , &shell->lolly_text_buffer[1][0] , TITLE_FONT, milford_font_logic_sub, -60-6, -472+12, FONT_RJUST, -2, 0, 0,0 );
+File TEAMEDIT.C:
+                //add_text_string ( tslot_poses[MAIN_TSLOT]+10 , te_ed_player_name_ptr, MILFORD_FONT, milford_font_logic, -320, -240, FONT_XC, -1, 0, 128, 0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+30+cnt , pl_ed_text_buffer, MILFORD_FONT, milford_font_logic, ((-96*4)+120)/2, -(65*4)+(y*21*4)+0, FONT_XC, 7, 0, 128, 0 );
+                                add_text_string ( tslot_poses[MAIN_TSLOT]+30+cnt , pl_ed_button_names[config->language][cnt], MILFORD_FONT, milford_font_logic, (-(170*4)+( x*140*4)+120)/2, -(65*4)+(y*21*4)+0, FONT_XC, cnt, 0, 128, 0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+30+cnt , pl_ed_button_names[config->language][cnt], MILFORD_FONT, milford_font_logic, (-(170*4)+( 70*4)+120)/2, -(65*4)+(y*21*4)+0, FONT_XC, 6, 0, 128, 0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+30+y , text_buffer, MILFORD_FONT, milford_font_logic, (-70*4)/2, -(62*4) + (y*21*4)-(16*4)-TE_YM, FONT_XC, 0, 0, 128, 0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+30+y , pl_ed_button_names[config->language][0], MILFORD_FONT, milford_font_logic, (-84*4)/2, -(62*4) + (y*21*4)-(16*4)-TE_YM, FONT_XC, 1, 0, 128, 0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+30+y , pl_ed_player_words[ te_player_type ][ config->language ], MILFORD_FONT, milford_font_logic, (-84*4)/2, -(62*4) + (y*21*4)-(16*4)-TE_YM, FONT_XC, 2, 0, 128, 0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+30+y , text_buffer, MILFORD_FONT, milford_font_logic, -652, -(62*4) + (y*21*4)-(16*4)-TE_YM, FONT_RJUST, 3, 0, 128, 0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+30+y , text_buffer, MILFORD_FONT, milford_font_logic, -652, -(62*4) + (y*21*4)-(16*4)-TE_YM, FONT_RJUST, 6, 0, 128, 0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+30+y , text_buffer, MILFORD_FONT, milford_font_logic, -652, -(62*4) + (y*21*4)-(16*4)-TE_YM, FONT_RJUST, 9, 0, 128, 0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+30+y , text_buffer, MILFORD_FONT, milford_font_logic, -652, -(62*4) + (y*21*4)-(16*4)-TE_YM, FONT_RJUST, 12, 0, 128, 0 );
+File UTILS.C:
+                add_text_string ( tslot_poses[SHELL_TSLOT]+9 , debug_ts, MILFORD_FONT, milford_font_logic, debug_tsx, debug_tsy, modes[debug_ts_mode], 0, 0, 0, 0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+cnt , txt, MILFORD_FONT, milford_font_logic, 0, -280+(60*cnt), FONT_XC, -2, 0, 0,0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+cnt , text_buffer, MILFORD_FONT, milford_font_logic, 0, -280+(60*cnt), FONT_XC, 0, 0, 0,0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+cnt , text_buffer, MILFORD_FONT, milford_font_logic, 0, -280+(60*cnt), FONT_XC, 1, 0, 0,0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+cnt , text_buffer, MILFORD_FONT, milford_font_logic, 0, -280+(60*cnt), FONT_XC, 2, 0, 0,0 );
+File TEAMSEL.C:
+                        ts = add_text_string ( tslot_poses[MAIN_TSLOT]+y , text_buffer, TINY_FONT, milford_font_logic, 270*1, -(76*4)+(y*TS_SCROLL_YS)-ts_scroll_y, FONT_XC, -2, 0, 0,0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+16 , ts_team_name_ptr , MILFORD_FONT, milford_font_logic, -228*1, -(89*4), FONT_XC, -2, 0, 0,0 );
+                ts=add_text_string ( tslot_poses[MAIN_TSLOT]+cnt , text_buffer, MILFORD_FONT, milford_font_logic, 0, snt_yp+(cnt*snt_ys)-20, FONT_XC, 0, 0, 32,0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+cnt , text_buffer, MILFORD_FONT, milford_font_logic, 0, snt_yp+(cnt*snt_ys)-20, FONT_XC, 1, 0, 0,0 );
+                ts=add_text_string ( tslot_poses[MAIN_TSLOT]+cnt ,text_buffer, MILFORD_FONT, milford_font_logic, 0, snt_yp+(cnt*snt_ys)-20, FONT_XC, 2, 0, 0,0 );
+File TITLE.C:
+//              add_text_string ( tslot_poses[MAIN_TSLOT] + 20+cnt , "oh what a luverly day it is blah de blah de blah de blah", MILFORD_FONT, milford_font_logic, 0,0, FONT_XC, cnt, 0, 10, 15 );
+                add_text_string ( tslot_poses[MAIN_TSLOT] + 16 , title_opt_list0[config->language][txt], TITLE_FONT, milford_font_logic, 0, (27*2*cnt)+rdb_sizes[title_list].y+yo-16, FONT_XC, 16, 0, 10, 15 );
+                ts = add_text_string ( tslot_poses[MAIN_TSLOT] + cnt , *list, MILFORD_FONT, milford_font_logic, 0, (26*2*cnt)+rdb_sizes[title_list].y+yo, FONT_XC, cnt, 0, 10, 15 );
+//      ts = add_text_string ( tslot_poses[MAIN_TSLOT] + 12 , "ABC DEFGHIJ\nabcdefghijklmnopqrstuvwxyz\n0123456789", FT13_FONT, milford_font_logic, 0, 0, FONT_XC, cnt, 0, 10, 15 );
+File PRESET.C:
+        add_text_string ( tslot_poses[MAIN_TSLOT]+TOTAL_PRESETS+cnt , preset_buffer , MILFORD_FONT, milford_font_logic, 0, -336, FONT_XC, -2, 0, 8,32 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+TOTAL_PRESETS+cnt , preset_buffer , MILFORD_FONT, milford_font_logic, 0, -260, FONT_XC, -2, 0, 0,0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+3 , text_buffer , MILFORD_FONT, milford_font_logic, 0, 200-24, FONT_XC, 0, 0, 0,0 );
+File ENTNAME.C:
+        ts = add_text_string ( tslot_poses[MAIN_TSLOT]+30, entname_namestring_ptr , MILFORD_FONT, milford_font_logic, EN_NAME_X, EN_NAME_Y, FONT_XC, -2, 0, 0,0 );
+File MEMCARD.C:
+                                add_text_string ( tslot_poses[MAIN_TSLOT]+32+cnt, text , TINY_FONT, milford_font_logic, 0, -(90*4)+(36*yp), FONT_XC, yp+512, 0, 0,0 );
+                                        add_text_string ( tslot_poses[MAIN_TSLOT]+32+cnt, text , TINY_FONT, milford_font_logic, 0, -(90*4)+(36*yp), FONT_XC, yp+512, 0, 0,0 );
+                ts = add_text_string ( tslot_poses[MAIN_TSLOT]+30, mc_info_buffer , MILFORD_FONT, milford_font_logic, 0, 0, FONT_YC+FONT_XC, -2, 0, 0,0 );
+        ts = add_text_string ( tslot_poses[MAIN_TSLOT]+64, text_buffer , MILFORD_FONT, milford_font_logic, 0, 232-48, FONT_XC, 1, 0, 0,0 );
+File CONFIG.C:
+                add_text_string ( tslot_poses[MAIN_TSLOT]+cnt, ac_tgad_text[config->language][cnt] , MILFORD_FONT, milford_font_logic, -540, ac_y+(ac_ys*4*cnt)-(9*4), FONT_RJUST, -2, 0, 0,0 );
+        ts = add_text_string ( tslot_poses[MAIN_TSLOT]+4 , audio_word2[config->language], MILFORD_FONT, milford_font_logic, -540, ac_y+(ac_ys*4*cnt)-(9*4), FONT_RJUST, -2, 0, 0, 0 );
+        ts = add_text_string ( tslot_poses[MAIN_TSLOT]+5 , audio_word1[config->language][config->sound_mode], MILFORD_FONT, milford_font_logic, -4, ac_y+(ac_ys*4*cnt)-(9*4), FONT_NORMAL, 4, 0, 0, 0 );
+        ts=add_text_string ( tslot_poses[MAIN_TSLOT]+0 , sp_info_text[ config->language ], MILFORD_FONT, milford_font_logic, 0, -(16*4), FONT_XC+FONT_YC, -1, 0, 0, 0 );
+        ts = add_text_string ( tslot_poses[MAIN_TSLOT]+0 , text_buffer, MILFORD_FONT, milford_font_logic, pc_x, pc_y-12, FONT_XC, 0, 0, 0, 0 );
+                ts=add_text_string ( tslot_poses[MAIN_TSLOT]+1+cnt , text, TINY_FONT, milford_font_logic, pc_button_poses[cnt][0], pc_button_poses[cnt][1], just, -1, 0, 0, 0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+0 , team_txt, MILFORD_FONT, milford_font_logic, -250, -364, FONT_XC, -1, 0, 0, 0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+1 , team_txt, MILFORD_FONT, milford_font_logic, 250, -364, FONT_XC, -1, 0, 0, 0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+2 , pa_vs_txt, MILFORD_FONT, milford_font_logic, 0, -364, FONT_XC, -1, 0, 0, 0 );
+                                        ts=add_text_string ( tslot_poses[REQUEST_TSLOT]+0, autoload_conf_file_txt[ config->language ] , MILFORD_FONT, milford_font_logic, 0, 0, FONT_XC+FONT_YC, -2, 0, 0,0 );
+                ts=add_text_string ( tslot_poses[MAIN_TSLOT]+y, training_types[y][config->language], MILFORD_FONT, milford_font_logic, tr_xo+-512, tr_yp+(y*60), FONT_RJUST, -2, 0, 0,0 );
+                ts=add_text_string ( tslot_poses[MAIN_TSLOT]+y+TRAINING_MODES, text_buffer, MILFORD_FONT, milford_font_logic, tr_xo+32, tr_yp+(y*60), FONT_NORMAL, -2, 0, 0,0 );
+File LEAGUE.C:
+                ts = add_text_string ( tslot_poses[MAIN_TSLOT]+text_cnt, text_buffer , MILFORD_FONT, milford_font_logic, -616, lstat_yp+(index_cnt*LSTAT_YSPACE)-0, FONT_RJUST, -2, 0, 8,0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+text_cnt, lstat_txt[config->language][x] , MILFORD_FONT, milford_font_logic, (-15+xspace[x])*4, lstat_yp-92, FONT_XC, -2, 0, 8,0 );
+                        add_text_string ( tslot_poses[MAIN_TSLOT]+text_cnt, text_buffer , MILFORD_FONT, milford_font_logic, (-15+xspace[x])*4, lstat_yp+(index_cnt*LSTAT_YSPACE)-0, FONT_XC, -2, 0, 8,0 );
+                        add_text_string ( tslot_poses[MAIN_TSLOT]+text_cnt, text_buffer , MILFORD_FONT, milford_font_logic, 0, league_stat_rdb[2].y1-16, FONT_XC, -2, 0, 8,0 );
+                        add_text_string ( tslot_poses[MAIN_TSLOT]+text_cnt, text_buffer , MILFORD_FONT, milford_font_logic, 0, league_stat_rdb[2].y1-16, FONT_XC, 0, 0, 8,0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+text_cnt, eq_group_winner_text[config->language] , MILFORD_FONT, milford_font_logic, 0, -316, FONT_XC, -2, 0, 8,0 );
+                        ts = add_text_string ( tslot_poses[MAIN_TSLOT]+text_cnt, text , TINY_FONT, milford_font_logic, 0, -256+(cnt*40), FONT_XC, -2, 0, 8,0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+text_cnt, eq_group_runner_text[config->language] , MILFORD_FONT, milford_font_logic, 0, 128, FONT_XC, -2, 0, 8,0 );
+                ts = add_text_string ( tslot_poses[MAIN_TSLOT]+text_cnt, text , TINY_FONT, milford_font_logic, 0, -256+(10*4)+(cnt*40), FONT_XC, -2, 0, 8,0 );
+                        ts = add_text_string ( tslot_poses[MAIN_TSLOT]+text_cnt, text , TINY_FONT, milford_font_logic, 0, -384+(11*4)+(cnt*36), FONT_XC, -2, 0, 8,0 );
+File TERRIT.C:
+                ts = add_text_string ( tslot_poses[MAIN_TSLOT]+y, territory_names[ config->language ][y] , MILFORD_FONT, milford_font_logic, 240, -(73*4)+(22*4*y), FONT_XC, y, 0, 64,64 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+6, territory_names[ config->language ][ comp->territory_data.current_territory ] , MILFORD_FONT, milford_font_logic, -236, 144, FONT_XC, -2, 0, 64,64 );
+                ts = add_text_string ( tslot_poses[MAIN_TSLOT]+cnt, text_buffer , MILFORD_FONT, milford_font_logic, 0, -(336)+(19*4*y), FONT_XC, y, 0, 64,64 );
+File KNOCKOUT.C:
+                                ts=add_text_string ( tslot_poses[MAIN_TSLOT]+cnt2, text_buffer, TINY_FONT, milford_font_logic, (-102*4)+(x*Ko_boxwd)-ko_windx-28, ((-94+(y*10))*4)+yoffs, FONT_XC, -2, 0, 0,0 );
+File MANAGE.C:
+                ts=add_text_string ( tslot_poses[MAIN_TSLOT]+y, text_buffer, MILFORD_FONT, milford_font_logic, -426, (y*TM_TEXT_HT)-tm_windy_dest-(32*4), FONT_NORMAL, y, 0, 0,0 );
+        ts=add_text_string ( tslot_poses[MAIN_TSLOT]+22, text_buffer, MILFORD_FONT, milford_font_logic, 244, -374, FONT_XC, 22, 0, 0,0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+23, tm_strat_text[ config->language ][ share->strategy[ human_team_pos ] ], MILFORD_FONT, milford_font_logic, 244, -52, FONT_XC, 23, 0, 0,0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+24+cnt, tm_player_stats[config->language][cnt], TINY_FONT, milford_font_logic, 72-24+16-6, 28+(9*4*cnt)+12, FONT_NORMAL, -2, 0, 0,0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+0, vs_text[ config->language], MILFORD_FONT, milford_font_logic, 0, yp, FONT_XC, 0, 0, 0,0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+1, (UBYTE *)get_team_name( share->team1 ), MILFORD_FONT, milford_font_logic, -248, yp, FONT_XC, 0, 0, 0,0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+2, (UBYTE *)get_team_name( share->team2 ), MILFORD_FONT, milford_font_logic, 248, yp, FONT_XC, 0, 0, 0,0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+3, text_buffer, MILFORD_FONT, milford_font_logic, -248, yp, FONT_XC, 0, 0, 0,0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+4, text_buffer, MILFORD_FONT, milford_font_logic, 248, yp, FONT_XC, 0, 0, 0,0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+5, text_buffer, MILFORD_FONT, milford_font_logic, -248, yp, FONT_XC, 0, 0, 0,0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+6, text_buffer, MILFORD_FONT, milford_font_logic, 248, yp, FONT_XC, 0, 0, 0,0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+7, top_scorers_text[ config->language], MILFORD_FONT, milford_font_logic, -248, yp, FONT_XC, 0, 0, 0,0 );
+        add_text_string ( tslot_poses[MAIN_TSLOT]+8, top_scorers_text[ config->language], MILFORD_FONT, milford_font_logic, 248, yp, FONT_XC, 0, 0, 0,0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+9+cnt,  text_buffer, MILFORD_FONT, milford_font_logic, -248, yp, FONT_XC, 0, 0, 0,0 );
+                add_text_string ( tslot_poses[MAIN_TSLOT]+12+cnt, text_buffer, MILFORD_FONT, milford_font_logic,  248, yp, FONT_XC, 0, 0, 0,0 );
+

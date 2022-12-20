@@ -1,0 +1,42 @@
+void write_debug_string( void );
+BYTE *find_string( BYTE *s, BYTE *p, WORD many );
+
+WORD preloader( BYTE *filename, BYTE *buffer );
+void show_file_error( LONG error );
+void debug_print( BYTE *fmt, ...);
+void quit_msg( BYTE *fmt, ...);
+void settle_down_now();
+WORD save_file( BYTE *save_filename, BYTE *buffer, LONG buffer_size, WORD dir );
+
+
+
+WORD initialise_io( UBYTE *bagfile, WORD fs_mode );
+LONG get_file_size( BYTE *filename, WORD dir );
+void *alloc_file_load( UBYTE *bagfile, UBYTE *suffix, WORD dir );
+
+WORD	standard_load_file( BYTE *filename, BYTE *buffer, LONG max_size, WORD dir  );
+WORD	bag_load_file( BYTE *filename, BYTE *buffer, LONG max_size, WORD dir );
+WORD	load_file( BYTE *filename, BYTE *buffer, LONG max_size, WORD dir  );
+WORD 	match( UBYTE *s, UBYTE *d );
+UBYTE *find_dir( UBYTE *dir );
+UBYTE *index_to_next_line( UBYTE *ptr );
+UBYTE *find_file( UBYTE *filename,UBYTE *list );
+WORD wait_seek( void );
+WORD wait_read( LONG firstwait, WORD sector_count );
+WORD load_from_cd( CdlFILE *fp, LONG size, UBYTE *buffer );
+WORD get_file_pos( UBYTE *filename, CdlFILE *fp );
+void to_lower_case( UBYTE *filename );
+void to_upper_case( UBYTE *filename );
+WORD bag_load_from_pc( LONG offset, LONG size, UBYTE *buffer );
+void copy_string( BYTE *s, BYTE *d );
+void append_string( BYTE *tag, BYTE *word );
+
+void reset_free_mem( void );
+
+
+
+void *allocate_mem( ULONG size );
+
+
+
+

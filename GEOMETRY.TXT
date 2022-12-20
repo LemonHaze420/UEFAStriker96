@@ -1,0 +1,157 @@
+******************************************************************************
+*
+*
+*	2d matrices...
+*
+*
+******************************************************************************
+
+
+
+Note...
+The column containing c,f,i is only used when multiplying to matrices together
+
+matrix[column][row]
+
+	a b c
+	d e f
+	g h i
+
+
+
+***************************************************
+*** Scaling a point ( xy ) using a scale matrix ***
+***************************************************
+
+scale matrix 
+
+	scale	0	0
+	0	scale	0
+	0	0	1
+
+	x = (oldx * matrix[0][0]) + (oldy * matrix[1][0]) 
+	y = (oldx * matrix[0][1]) + (oldy * matrix[1][1]) 
+
+
+
+
+
+
+*******************************************************
+*** Rotating a point ( xy ) using a rotation matrix ***
+*******************************************************
+
+rotation matrix ( a=angle of rotation )
+
+rt_matrix[3][3]={
+	cos a  -sin a	0
+	sin a   cos a  0
+	  0       0    1
+}
+
+	x = (oldx * matrix[0][0]) + (oldy * matrix[1][0]) 
+	y = (oldx * matrix[0][1]) + (oldy * matrix[1][1]) 
+
+*****************************************************************************
+*** Rotating+translating a point (xy) using a rotation translation matrix ***
+*****************************************************************************
+
+
+rotation translation matrix ( a=angle of rotation )
+
+rt_matrix[3][3]={
+	cos a  -sin a	0
+	sin a   cos a  0
+	xtrans ytrans  1
+	}
+
+	x = (oldx * matrix[0][0]) + (oldy * matrix[1][0]) + matrix[2][0]
+	y = (oldx * matrix[0][1]) + (oldy * matrix[1][1]) + matrix[2][1]
+
+
+********************************
+*** Multiplying two matrices ***
+********************************
+
+Both matrices need to have an equal number of rows and colums
+as rows are multiplied by columns....
+
+
+   MATRIX1	  MATRIX2
+	~~~~~~~    ~~~~~~~
+	a  b  c    j  k  l
+
+	d  e  f    m  n  o
+
+	g  h  i    p  q  r
+
+C,F,I usually contain 0,0,1 
+A,B,D,E = rotation part
+G,H 	  = translation
+
+matrix 1 and 2 are multiplied together to give...
+
+	aj+bm+cp   ak+bn+cq  al+bo+cr
+
+	dj+em+fp   dk+en+fq  dl+eo+fr
+
+	gj+hm+ip   gk+hn+iq  gl+ho+ir
+
+
+
+
+
+//3d matrix on PSX
+
+	a b c \
+	d e f	|- rotation part
+	g h i /
+	j k l	-- translation
+
+
+
+
+
+
+***************************
+*** Unit Vectors	***
+***************************
+
+What is it?
+
+A Unit vector is a vector used to calculate a position to
+move a point in space.
+It has a length of one ( 1 unit )
+It's basically a direction from the origin.
+To move 50 units from the origin, the unit vector is used to determine
+where to move to.
+
+new_x = unit_x * 50
+new_y = unit_y * 50
+new_z = unit_z * 50
+
+
+
+unit vector
+
+	y
+   	.
+	| /
+	|/
+	---- x
+
+
+	   	   . new pos = unit_vector * num_units
+	  	  /
+	 	 /
+		/
+       	       /
+      	      /
+     	     /
+	y   /
+   	   /
+	| /
+	|/
+	---- x
+
+

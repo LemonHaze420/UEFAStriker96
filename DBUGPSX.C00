@@ -1,0 +1,124 @@
+#version
+ 4.113
+#readram0
+ 00000000  007FFFFF
+ 80000000  807FFFFF
+ A0000000  A07FFFFF
+ BFC00000  BFC0FFFF
+ 1F800000  1F800400
+#writeram0
+ 00000000  007FFFFF 
+ 80000000  807FFFFF 
+ A0000000  A07FFFFF 
+#update
+ FF 0008
+#video
+ 03 84 3C
+#label level
+ 02 00 00
+#colour attributes
+ 17 20 60 40 1F 2F 6F 4F 3E B0 4F 5E 0C 70 C0 87 8E 8E F0 90 4F 87 7C 0E 0A 70
+#mono attributes
+ 07 07 07 07 0F 0F 0F 0F 70 70 07 70 0F 70 01 07 0F 0F 70 0F 07 07 70 07 07 70
+#default tabs
+ 68K 0F 17 28 30 00 00 00 00
+ 658 0F 17 28 30 00 00 00 00
+ Z80 0F 17 28 30 00 00 00 00
+ C   04 00 00 00 00 00 00 00
+#expression C/ASM flags
+ FF FF 00 00 00
+#window
+ 01 00 00 00
+ 00 01 48 0A 46 05
+ 00000000
+#window
+ 03 00 40 00
+ 48 0A 83 16 65 0C
+ 0001A034
+#window
+ 05 00 40 00
+ 00 0A 48 3A 47 0B
+ 00000113
+#file
+D:\STRIKER\SRC\MAIN.C
+#tabs
+ 04 00 00 00 00 00 00 00
+
+#window
+ 06 00 00 00
+ 48 01 83 0A 4E 05
+ 00000000
+#window
+ 03 01 40 00
+ 48 16 83 2E 5F 17
+ 001595F4
+#window
+ 84 00 40 00
+ 48 2E 83 3A 52 37
+ 00000003
+#watches
+ 80 00 08
+ shell->logo
+ 80 00 08
+ ts_teams_selected_list
+ 80 00 08
+ ts_teams_list
+ 80 00 08
+ ts_teams_index_list
+ 80 00 08
+ ts_total_teams
+ 80 00 08
+ mhptr[0]
+ 80 00 08
+ end_of_ram
+ 80 00 08
+ &end_of_ram
+ 80 00 08
+ mh_amount_used[0]
+ 80 00 08
+ heap_area
+ 80 00 08
+ share->order[0]
+
+#history
+ 02 mem.h
+ 02 main.c
+ 02 teamsel.c
+ 02 shell.c
+ 02 general.h
+ 02 teams.h
+ 02 text.h
+ 02 players.con
+ 07 0
+ 07 0
+ 07 0
+ 07 0
+ 07 -410
+ 07 -370
+ 07 -270
+ 07 -170
+ 0A reset_selected_teams_list
+ 0A 1595f4
+ 0A shell->logo->xscale
+ 0A &shell->logo->xscale
+ 0A update_shell_logo
+ 0A 1a068
+ 0A shell_shad_upd
+ 0A shell_shad_update
+ 0B init_select_num_teams
+ 0B initialise_objects
+ 0B friendly_thread
+ 0B shell_type_word_list
+ 0B initialise_objects
+ 0B friendly_thread
+ 0B shell_type_word_list
+ 0F memcard.c
+ 0F memcard.c
+ 12 share->order[0]
+ 12 heap_area
+ 12 mh_amount_used[0]
+ 12 &end_of_ram
+ 12 end_of_ram
+ 12 mhptr[0]
+ 12 ts_total_teams
+ 12 ts_teams_index_list

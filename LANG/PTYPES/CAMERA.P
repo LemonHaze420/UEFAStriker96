@@ -1,0 +1,10 @@
+void point_cam_z( void );
+void move_camera( void );
+void set_camera_position( WORD x, WORD y, WORD z );
+
+void	perp_vectors(register SVECTOR *i, SVECTOR *j, SVECTOR *k);
+void	point_camera_by_vector(void);
+
+void init_camera( void );
+void target_camera( void );
+

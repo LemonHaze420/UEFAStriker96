@@ -1,0 +1,8 @@
+void display_bs( Bs_image *bs_image );
+void main( void );
+void main_init( void );
+void game_init( void );
+void langloop( void );
+
+
+
